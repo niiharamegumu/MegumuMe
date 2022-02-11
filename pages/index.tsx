@@ -46,7 +46,7 @@ const Home: NextPage = () => {
             borderRadius={10}
             p={{ base: 4, md: 6 }}
           >
-            <HeadH3>Name : Niihara Megumu（新原 龍）</HeadH3>
+            <HeadH3>Niihara Megumu（新原 龍）</HeadH3>
             <Text fontSize="sm">1996.12.23 25 years old.</Text>
             <Text fontSize="sm">宮崎生まれ、宮崎育ち</Text>
             <Text fontSize="sm">
