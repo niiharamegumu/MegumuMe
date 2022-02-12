@@ -11,11 +11,10 @@ const imageOption = "?fm=webp&w=500";
 // eslint-disable-next-line react/display-name
 export const BlogCard: VFC<Props> = memo((props) => {
   const { blog } = props;
-  console.log(blog);
   return (
     <Flex borderRadius={10} overflow="hidden" bg="gray.300" alignItems="center">
       <Image
-        src={`${blog["main-image"].url}${imageOption}`}
+        src={`${blog.mainImage.url}${imageOption}`}
         alt={blog.title}
         objectFit="cover"
         w={{ base: "42vw", lg: "25vw" }}

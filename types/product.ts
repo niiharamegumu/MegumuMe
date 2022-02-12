@@ -5,7 +5,7 @@ export type ProductType = {
   publishedAt: string;
   revisedAt: string;
   title: string;
-  "main-image": {
+  mainImage: {
     url: string;
     height: number;
     width: number;

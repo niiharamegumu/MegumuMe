@@ -35,7 +35,7 @@ export const ProductCard: VFC<Props> = memo((props) => {
           w="100%"
           h={{ base: "200px", md: "300px", lg: "280px" }}
           objectFit="cover"
-          src={`${product["main-image"].url}${imageOption}`}
+          src={`${product.mainImage.url}${imageOption}`}
           alt={product.title}
         />
       </Flex>
