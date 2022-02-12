@@ -14,13 +14,7 @@ const imageOption = "?fm=webp&w=500";
 export const ProductCard: VFC<Props> = memo((props) => {
   const { product } = props;
   return (
-    <Box
-      position="relative"
-      border="1px"
-      borderColor="gray.300"
-      borderRadius={10}
-      overflow="hidden"
-    >
+    <Box position="relative" borderRadius={10} overflow="hidden">
       {product.url && (
         <Link
           href={product.url}
@@ -39,6 +33,7 @@ export const ProductCard: VFC<Props> = memo((props) => {
       <Flex>
         <Image
           w="100%"
+          h={{ base: "200px", md: "300px", lg: "280px" }}
           objectFit="cover"
           src={`${product["main-image"].url}${imageOption}`}
           alt={product.title}
