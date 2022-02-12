@@ -23,7 +23,7 @@ export const Nav: VFC = () => {
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/">
+        <NavLink path="/products/">
           <Box fontSize={{ base: "30px", sm: "40px" }}>
             <FcBusiness />
           </Box>
