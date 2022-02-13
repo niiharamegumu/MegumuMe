@@ -66,7 +66,12 @@ const ProductsList: VFC<Props> = (props) => {
         </HeadH2>
         <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
           {products?.map((product) => (
-            <GridItem key={product.id}>
+            <GridItem
+              key={product.id}
+              bg="gray.300"
+              borderRadius={10}
+              overflow="hidden"
+            >
               <ProductCard product={product} />
             </GridItem>
           ))}

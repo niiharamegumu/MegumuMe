@@ -14,7 +14,7 @@ const imageOption = "?fm=webp&w=500";
 export const ProductCard: VFC<Props> = memo((props) => {
   const { product } = props;
   return (
-    <Box position="relative" borderRadius={10} overflow="hidden">
+    <Box position="relative">
       {product.url && (
         <Link
           href={product.url}
@@ -39,7 +39,7 @@ export const ProductCard: VFC<Props> = memo((props) => {
           alt={product.title}
         />
       </Flex>
-      <Stack p={4} bg="gray.300" color="gray.900" spacing={1}>
+      <Stack p={4} color="gray.900" spacing={1}>
         <Text fontSize="xl">{product.title}</Text>
         <Text fontSize="md">{product.sumally}</Text>
         <Text fontSize="sm" color="gray.600">
