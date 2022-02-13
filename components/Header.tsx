@@ -8,6 +8,7 @@ export const Header: VFC = () => {
     <Box as="header" pt={8}>
       <Link href="/" passHref>
         <Flex
+          cursor="pointer"
           bg="white"
           w="60px"
           h="60px"
