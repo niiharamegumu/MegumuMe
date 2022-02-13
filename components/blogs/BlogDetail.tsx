@@ -16,16 +16,17 @@ export const BlogDetail: VFC<Props> = memo((props) => {
   const { blog } = props;
   return (
     <Box color="gray.900" borderRadius={10} overflow="hidden">
-      <Flex h="300px" bg="gray.800" justify="center" alignItems="center">
+      <Flex>
         <Image
           src={`${blog.mainImage.url}${imageOption}`}
           alt={blog.title}
           objectFit="cover"
-          h="250px"
+          w="100%"
+          h={{ base: "180px", sm: "300px", md: "400px" }}
         />
       </Flex>
 
-      <Box bg="gray.300" px={20} py={14}>
+      <Box bg="gray.300" px={{ base: 4, lg: 20 }} py={14}>
         <Heading fontSize="4xl" fontWeight="bold" mb={4}>
           {blog.title}
         </Heading>

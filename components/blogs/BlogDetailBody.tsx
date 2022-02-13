@@ -42,7 +42,7 @@ const BlogDetailBody: VFC<Props> = memo((props) => {
         },
         img: {
           w: "100%",
-          h: 400,
+          h: { base: 200, sm: 300, md: 400 },
           objectFit: "cover",
           borderRadius: 10,
         },
