@@ -40,7 +40,11 @@ export const Blogs: VFC<Props> = (props) => {
     mutate();
   }, [mutate]);
 
-  if (error) return <div>failed to load.</div>;
+  if (error) {
+    <MainLayout rightComponents={<Nav />}>
+      <div>failed to load.</div>;
+    </MainLayout>;
+  }
 
   return (
     <MainLayout rightComponents={<Nav />}>
