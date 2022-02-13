@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 import { useEffect, VFC } from "react";
 import useSWR from "swr";
 import { BlogCard } from "../components/blogs/BlogCard";
+import { FcReading } from "react-icons/fc";
 
 import { MainLayout } from "../components/MainLayout";
 import { Nav } from "../components/Nav";
@@ -51,6 +52,7 @@ export const Blogs: VFC<Props> = (props) => {
   return (
     <MainLayout rightComponents={<Nav />}>
       <HeadH2 display="flex" alignItems="center" gap={2}>
+        <FcReading />
         blogs
       </HeadH2>
       <Grid

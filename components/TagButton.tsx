@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { AiFillTag } from "react-icons/ai";
-import { Tag, TagLabel } from "@chakra-ui/react";
+import { Flex, Tag, TagLabel } from "@chakra-ui/react";
 
 type Props = {
   tag: string;
@@ -9,9 +9,11 @@ type Props = {
 export const TagButton: VFC<Props> = (props) => {
   const { tag } = props;
   return (
-    <Tag variant="outline" colorScheme="teal" mr={2} mb={2}>
-      <AiFillTag />
-      <TagLabel>{tag}</TagLabel>
+    <Tag variant="outline" colorScheme="teal">
+      <Flex justify="center" alignItems="center" gap="2px">
+        <AiFillTag />
+        <TagLabel>{tag}</TagLabel>
+      </Flex>
     </Tag>
   );
 };

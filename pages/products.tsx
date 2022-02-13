@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { useEffect, VFC } from "react";
 import useSWR from "swr";
-import { FcBusiness } from "react-icons/fc";
+import { FcServices } from "react-icons/fc";
 
 import { clientProducts } from "../libs/microCMS/client";
 import { ProductType } from "../types/product";
@@ -52,7 +52,7 @@ const ProductsList: VFC<Props> = (props) => {
   return (
     <MainLayout rightComponents={<Nav />}>
       <HeadH2 display="flex" alignItems="center" gap={2}>
-        <FcBusiness />
+        <FcServices />
         products
       </HeadH2>
       <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>

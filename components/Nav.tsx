@@ -1,7 +1,7 @@
 import { VFC } from "react";
 import { NavLink } from "../components/NavLink";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import { FcHome, FcBusiness, FcReading } from "react-icons/fc";
+import { FcHome, FcServices, FcReading } from "react-icons/fc";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 
 export const Nav: VFC = () => {
@@ -25,7 +25,7 @@ export const Nav: VFC = () => {
       <GridItem>
         <NavLink path="/products/">
           <Box fontSize={{ base: "30px", sm: "40px" }}>
-            <FcBusiness />
+            <FcServices />
           </Box>
         </NavLink>
       </GridItem>
