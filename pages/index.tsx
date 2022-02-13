@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     <>
       <Seo
         pageTitle="About Me"
-        pageDescription="About Me."
+        pageDescription="宮崎生まれ、宮崎育ち。フロントエンドを主にしている地方在住エンジニア。独学で日々学んでいます。"
         pageImg="https://megumu.me/icon.png"
         pageImgWidth={1280}
         pageImgHeight={640}
