@@ -1,14 +1,14 @@
-import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import { useEffect, VFC } from "react";
 import useSWR from "swr";
-import { BlogCard } from "../../components/blogs/BlogCard";
+import { BlogCard } from "../components/blogs/BlogCard";
 
-import { MainLayout } from "../../components/MainLayout";
-import { Nav } from "../../components/Nav";
-import { HeadH2 } from "../../components/style/Common";
-import { clientBlogs } from "../../libs/microCMS/client";
-import { BlogType } from "../../types/blog";
+import { MainLayout } from "../components/MainLayout";
+import { Nav } from "../components/Nav";
+import { HeadH2 } from "../components/style/Common";
+import { clientBlogs } from "../libs/microCMS/client";
+import { BlogType } from "../types/blog";
 
 type Props = {
   staticBlogs: BlogType[];
@@ -41,9 +41,11 @@ export const Blogs: VFC<Props> = (props) => {
   }, [mutate]);
 
   if (error) {
-    <MainLayout rightComponents={<Nav />}>
-      <div>failed to load.</div>;
-    </MainLayout>;
+    return (
+      <MainLayout rightComponents={<Nav />}>
+        <div>failed to load.</div>;
+      </MainLayout>
+    );
   }
 
   return (

@@ -3,13 +3,13 @@ import { useEffect, VFC } from "react";
 import useSWR from "swr";
 import { FcBusiness } from "react-icons/fc";
 
-import { clientProducts } from "../../libs/microCMS/client";
-import { ProductType } from "../../types/product";
-import { Nav } from "../../components/Nav";
-import { MainLayout } from "../../components/MainLayout";
+import { clientProducts } from "../libs/microCMS/client";
+import { ProductType } from "../types/product";
+import { Nav } from "../components/Nav";
+import { MainLayout } from "../components/MainLayout";
 import { Grid, GridItem } from "@chakra-ui/react";
-import { ProductCard } from "../../components/product/ProductCard";
-import { HeadH2 } from "../../components/style/Common";
+import { ProductCard } from "../components/product/ProductCard";
+import { HeadH2 } from "../components/style/Common";
 
 type Props = {
   staticProducts: ProductType[];
@@ -42,9 +42,11 @@ const ProductsList: VFC<Props> = (props) => {
   }, [mutate]);
 
   if (error) {
-    <MainLayout rightComponents={<Nav />}>
-      <div>failed to load.</div>;
-    </MainLayout>;
+    return (
+      <MainLayout rightComponents={<Nav />}>
+        <div>failed to load.</div>;
+      </MainLayout>
+    );
   }
 
   return (
