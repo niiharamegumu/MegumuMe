@@ -40,7 +40,7 @@ export const ProductCard: VFC<Props> = memo((props) => {
         />
       </Flex>
       <Stack p={4} bg="gray.300" color="gray.900" spacing={1}>
-        <Text fontSize="lg">{product.title}</Text>
+        <Text fontSize="xl">{product.title}</Text>
         <Text fontSize="md">{product.sumally}</Text>
         <Text fontSize="sm" color="gray.600">
           {product.skills.join(" / ")}
