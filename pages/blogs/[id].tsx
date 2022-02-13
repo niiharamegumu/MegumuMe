@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import { useEffect, VFC } from "react";
+import { Spinner } from "@chakra-ui/react";
 import useSWR from "swr";
 import cheerio, { CheerioAPI } from "cheerio";
 import hljs from "highlight.js";
@@ -55,6 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Post: VFC<Props> = (props) => {
   const { staticBlog, id } = props;
+  const router = useRouter();
+
   const fetcher = () =>
     clientBlogs.get({ endpoint: "blogs", contentId: id }).then((data) => data);
   const {
@@ -64,21 +68,31 @@ const Post: VFC<Props> = (props) => {
   } = useSWR<BlogType>("blog", fetcher, {
     fallbackData: staticBlog,
   });
-  blog!.body = codeHighlight(blog!.body).html();
 
   useEffect(() => {
     mutate();
   }, [mutate]);
 
-  if (error) {
-    <MainLayout rightComponents={<Nav />}>
-      <div>failed to load.</div>
-    </MainLayout>;
+  if (router.isFallback || !blog) {
+    return (
+      <MainLayout rightComponents={<Nav />}>
+        <Spinner />
+      </MainLayout>
+    );
   }
+  if (error) {
+    return (
+      <MainLayout rightComponents={<Nav />}>
+        <div>failed to load.</div>
+      </MainLayout>
+    );
+  }
+
+  blog!.body = codeHighlight(blog!.body).html();
 
   return (
     <MainLayout rightComponents={<Nav />}>
-      <BlogDetail blog={blog!} />
+      <BlogDetail blog={blog} />
     </MainLayout>
   );
 };
