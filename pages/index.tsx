@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <Seo
         pageTitle="About Me"
         pageDescription="About Me."
-        pageImg="https://megumu-me.vercel.app/icon.png"
+        pageImg="https://megumu.me/icon.png"
         pageImgWidth={1280}
         pageImgHeight={640}
       />
