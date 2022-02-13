@@ -9,7 +9,7 @@ type Props = {
 export const TagButton: VFC<Props> = (props) => {
   const { tag } = props;
   return (
-    <Tag variant="outline" colorScheme="teal">
+    <Tag variant="outline" colorScheme="teal" mr="2px" mb="2px">
       <Flex justify="center" alignItems="center" gap="2px">
         <AiFillTag />
         <TagLabel>{tag}</TagLabel>
