@@ -1,8 +1,9 @@
 import { VFC } from "react";
-import { NavLink } from "../components/NavLink";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { FcHome, FcServices, FcReading } from "react-icons/fc";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+
+import { NavLink } from "../components/NavLink";
 
 export const Nav: VFC = () => {
   return (

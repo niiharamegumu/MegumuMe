@@ -1,10 +1,11 @@
-import { Grid, GridItem } from "@chakra-ui/react";
-import { GetStaticProps } from "next";
 import { useEffect, VFC } from "react";
+import { GetStaticProps } from "next";
+import { Grid, GridItem } from "@chakra-ui/react";
 import useSWR from "swr";
-import { BlogCard } from "../components/blogs/BlogCard";
 import { FcReading } from "react-icons/fc";
 
+import Seo from "../components/Seo";
+import { BlogCard } from "../components/blogs/BlogCard";
 import { MainLayout } from "../components/MainLayout";
 import { Nav } from "../components/Nav";
 import { HeadH2 } from "../components/style/Common";
@@ -50,24 +51,33 @@ export const Blogs: VFC<Props> = (props) => {
   }
 
   return (
-    <MainLayout rightComponents={<Nav />}>
-      <HeadH2 display="flex" alignItems="center" gap={2}>
-        <FcReading />
-        blogs
-      </HeadH2>
-      <Grid
-        templateColumns={{
-          base: "1fr",
-        }}
-        gap={6}
-      >
-        {blogs?.map((blog) => (
-          <GridItem key={blog.id}>
-            <BlogCard blog={blog} />
-          </GridItem>
-        ))}
-      </Grid>
-    </MainLayout>
+    <>
+      <Seo
+        pageTitle="Blogs"
+        pageDescription="Blog一覧。主にフロントエンドに関する記事を上げています。"
+        pageImg="https://megumu-me.vercel.app/icon.png"
+        pageImgWidth={1280}
+        pageImgHeight={640}
+      />
+      <MainLayout rightComponents={<Nav />}>
+        <HeadH2 display="flex" alignItems="center" gap={2}>
+          <FcReading />
+          blogs
+        </HeadH2>
+        <Grid
+          templateColumns={{
+            base: "1fr",
+          }}
+          gap={6}
+        >
+          {blogs?.map((blog) => (
+            <GridItem key={blog.id}>
+              <BlogCard blog={blog} />
+            </GridItem>
+          ))}
+        </Grid>
+      </MainLayout>
+    </>
   );
 };
 export default Blogs;

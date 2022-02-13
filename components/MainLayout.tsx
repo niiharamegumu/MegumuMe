@@ -1,5 +1,4 @@
 import { VFC } from "react";
-
 import { Grid, GridItem } from "@chakra-ui/react";
 
 type Props = {

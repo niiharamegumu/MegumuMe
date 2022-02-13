@@ -1,6 +1,6 @@
 import { VFC } from "react";
-
 import { Box, Container } from "@chakra-ui/react";
+
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 

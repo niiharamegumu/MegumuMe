@@ -1,7 +1,6 @@
 import React, { memo, VFC } from "react";
 import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import { format } from "date-fns";
-import { IoIosArrowDropleft } from "react-icons/io";
 
 import { BlogType } from "../../types/blog";
 import { TagButton } from "../TagButton";

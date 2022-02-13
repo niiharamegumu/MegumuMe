@@ -1,12 +1,13 @@
+import { useEffect, VFC } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { useEffect, VFC } from "react";
 import { Spinner } from "@chakra-ui/react";
 import useSWR from "swr";
 import cheerio, { CheerioAPI } from "cheerio";
 import hljs from "highlight.js";
 import "highlight.js/styles/night-owl.css";
 
+import Seo from "../../components/Seo";
 import { BlogDetail } from "../../components/blogs/BlogDetail";
 import { MainLayout } from "../../components/MainLayout";
 import { Nav } from "../../components/Nav";
@@ -91,9 +92,16 @@ const Post: VFC<Props> = (props) => {
   blog!.body = codeHighlight(blog!.body).html();
 
   return (
-    <MainLayout rightComponents={<Nav />}>
-      <BlogDetail blog={blog} />
-    </MainLayout>
+    <>
+      <Seo
+        pageTitle={blog!.title}
+        pageDescription={`${blog!.description}?fm=webp&w=200`}
+        pageImg={blog!.mainImage.url}
+      />
+      <MainLayout rightComponents={<Nav />}>
+        <BlogDetail blog={blog} />
+      </MainLayout>
+    </>
   );
 };
 

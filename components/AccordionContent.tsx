@@ -5,7 +5,6 @@ import {
   AccordionPanel,
   Box,
 } from "@chakra-ui/react";
-import { FcPlus } from "react-icons/fc";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 type Props = {

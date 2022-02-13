@@ -1,5 +1,5 @@
-import { Flex, Image, Stack, Text, Box, Link } from "@chakra-ui/react";
 import { memo, VFC } from "react";
+import { Flex, Image, Stack, Text, Box, Link } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { ProductType } from "../../types/product";

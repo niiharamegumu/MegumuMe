@@ -3,6 +3,7 @@ import { useEffect, VFC } from "react";
 import useSWR from "swr";
 import { FcServices } from "react-icons/fc";
 
+import Seo from "../components/Seo";
 import { clientProducts } from "../libs/microCMS/client";
 import { ProductType } from "../types/product";
 import { Nav } from "../components/Nav";
@@ -50,19 +51,28 @@ const ProductsList: VFC<Props> = (props) => {
   }
 
   return (
-    <MainLayout rightComponents={<Nav />}>
-      <HeadH2 display="flex" alignItems="center" gap={2}>
-        <FcServices />
-        products
-      </HeadH2>
-      <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
-        {products?.map((product) => (
-          <GridItem key={product.id}>
-            <ProductCard product={product} />
-          </GridItem>
-        ))}
-      </Grid>
-    </MainLayout>
+    <>
+      <Seo
+        pageTitle="Products"
+        pageDescription="これまでに制作した作品の一覧です。"
+        pageImg="https://megumu-me.vercel.app/icon.png"
+        pageImgWidth={1280}
+        pageImgHeight={640}
+      />
+      <MainLayout rightComponents={<Nav />}>
+        <HeadH2 display="flex" alignItems="center" gap={2}>
+          <FcServices />
+          products
+        </HeadH2>
+        <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
+          {products?.map((product) => (
+            <GridItem key={product.id}>
+              <ProductCard product={product} />
+            </GridItem>
+          ))}
+        </Grid>
+      </MainLayout>
+    </>
   );
 };
 export default ProductsList;

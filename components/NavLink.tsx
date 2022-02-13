@@ -1,5 +1,5 @@
-import { Flex, Link } from "@chakra-ui/react";
 import { VFC } from "react";
+import { Flex, Link } from "@chakra-ui/react";
 
 type Props = {
   children: React.ReactNode;

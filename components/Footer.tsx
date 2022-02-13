@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react";
 import { VFC } from "react";
+import { Box } from "@chakra-ui/react";
 
 export const Footer: VFC = () => {
   return (
