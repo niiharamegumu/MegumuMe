@@ -12,12 +12,14 @@ export type BlogType = {
     height: number;
     width: number;
   };
-  tags?: {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    tagName: string;
-  };
+  tags?: [
+    {
+      id: string;
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
+      revisedAt: string;
+      tagName: string;
+    }
+  ];
 };
