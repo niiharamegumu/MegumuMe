@@ -6,8 +6,6 @@ import { FcReading } from "react-icons/fc";
 
 import Seo from "../components/Seo";
 import { BlogCard } from "../components/blogs/BlogCard";
-import { MainLayout } from "../components/MainLayout";
-import { Nav } from "../components/Nav";
 import { HeadH2 } from "../components/style/Common";
 import { clientBlogs } from "../libs/microCMS/client";
 import { BlogType } from "../types/blog";
@@ -43,11 +41,7 @@ export const Blogs: VFC<Props> = (props) => {
   }, [mutate]);
 
   if (error) {
-    return (
-      <MainLayout rightComponents={<Nav />}>
-        <div>failed to load.</div>;
-      </MainLayout>
-    );
+    return <div>failed to load.</div>;
   }
 
   return (
@@ -59,24 +53,22 @@ export const Blogs: VFC<Props> = (props) => {
         pageImgWidth={1280}
         pageImgHeight={640}
       />
-      <MainLayout rightComponents={<Nav />}>
-        <HeadH2 display="flex" alignItems="center" gap={2}>
-          <FcReading />
-          blogs
-        </HeadH2>
-        <Grid
-          templateColumns={{
-            base: "1fr",
-          }}
-          gap={6}
-        >
-          {blogs?.map((blog) => (
-            <GridItem key={blog.id}>
-              <BlogCard blog={blog} />
-            </GridItem>
-          ))}
-        </Grid>
-      </MainLayout>
+      <HeadH2 display="flex" alignItems="center" gap={2}>
+        <FcReading />
+        blogs
+      </HeadH2>
+      <Grid
+        templateColumns={{
+          base: "1fr",
+        }}
+        gap={6}
+      >
+        {blogs?.map((blog) => (
+          <GridItem key={blog.id}>
+            <BlogCard blog={blog} />
+          </GridItem>
+        ))}
+      </Grid>
     </>
   );
 };

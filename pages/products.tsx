@@ -6,8 +6,6 @@ import { FcServices } from "react-icons/fc";
 import Seo from "../components/Seo";
 import { clientProducts } from "../libs/microCMS/client";
 import { ProductType } from "../types/product";
-import { Nav } from "../components/Nav";
-import { MainLayout } from "../components/MainLayout";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { ProductCard } from "../components/product/ProductCard";
 import { HeadH2 } from "../components/style/Common";
@@ -43,11 +41,7 @@ const ProductsList: VFC<Props> = (props) => {
   }, [mutate]);
 
   if (error) {
-    return (
-      <MainLayout rightComponents={<Nav />}>
-        <div>failed to load.</div>;
-      </MainLayout>
-    );
+    return <div>failed to load.</div>;
   }
 
   return (
@@ -59,24 +53,22 @@ const ProductsList: VFC<Props> = (props) => {
         pageImgWidth={1280}
         pageImgHeight={640}
       />
-      <MainLayout rightComponents={<Nav />}>
-        <HeadH2 display="flex" alignItems="center" gap={2}>
-          <FcServices />
-          products
-        </HeadH2>
-        <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
-          {products?.map((product) => (
-            <GridItem
-              key={product.id}
-              bg="gray.300"
-              borderRadius={10}
-              overflow="hidden"
-            >
-              <ProductCard product={product} />
-            </GridItem>
-          ))}
-        </Grid>
-      </MainLayout>
+      <HeadH2 display="flex" alignItems="center" gap={2}>
+        <FcServices />
+        products
+      </HeadH2>
+      <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
+        {products?.map((product) => (
+          <GridItem
+            key={product.id}
+            bg="gray.300"
+            borderRadius={10}
+            overflow="hidden"
+          >
+            <ProductCard product={product} />
+          </GridItem>
+        ))}
+      </Grid>
     </>
   );
 };

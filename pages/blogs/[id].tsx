@@ -9,8 +9,6 @@ import "highlight.js/styles/night-owl.css";
 
 import Seo from "../../components/Seo";
 import { BlogDetail } from "../../components/blogs/BlogDetail";
-import { MainLayout } from "../../components/MainLayout";
-import { Nav } from "../../components/Nav";
 import { clientBlogs } from "../../libs/microCMS/client";
 import { BlogType } from "../../types/blog";
 
@@ -75,18 +73,10 @@ const Post: VFC<Props> = (props) => {
   }, [mutate]);
 
   if (router.isFallback || !blog) {
-    return (
-      <MainLayout rightComponents={<Nav />}>
-        <Spinner />
-      </MainLayout>
-    );
+    return <Spinner />;
   }
   if (error) {
-    return (
-      <MainLayout rightComponents={<Nav />}>
-        <div>failed to load.</div>
-      </MainLayout>
-    );
+    return <div>failed to load.</div>;
   }
 
   blog!.body = codeHighlight(blog!.body).html();
@@ -98,9 +88,8 @@ const Post: VFC<Props> = (props) => {
         pageDescription={`${blog!.description}?fm=webp&w=200`}
         pageImg={blog!.mainImage.url}
       />
-      <MainLayout rightComponents={<Nav />}>
-        <BlogDetail blog={blog} />
-      </MainLayout>
+
+      <BlogDetail blog={blog} />
     </>
   );
 };
