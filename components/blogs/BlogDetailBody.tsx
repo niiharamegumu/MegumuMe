@@ -17,11 +17,33 @@ const BlogDetailBody: VFC<Props> = memo((props) => {
           mb: 4,
           listStyle: "none",
         },
-        h1: { fontSize: "3xl", fontWeight: "bold", color: color },
-        h2: { fontSize: "2xl", fontWeight: "bold", color: color },
-        h3: { fontSize: "xl", fontWeight: "bold", color: color },
-        h4: { fontSize: "lg", fontWeight: "bold", color: color },
-        h5: { fontSize: "md", fontWeight: "bold", color: color },
+        h1: {
+          fontWeight: "bold",
+          color: color,
+          base: { fontSize: "2xl" },
+          sm: { fontSize: "3xl" },
+        },
+        h2: {
+          fontSize: "2xl",
+          fontWeight: "bold",
+          color: color,
+        },
+        h3: {
+          fontSize: "xl",
+          fontWeight: "bold",
+          color: color,
+        },
+        h4: {
+          fontWeight: "bold",
+          color: color,
+          base: { fontSize: "md" },
+          sm: { fontSize: "lg" },
+        },
+        h5: {
+          fontSize: "md",
+          fontWeight: "bold",
+          color: color,
+        },
         p: { fontSize: "md", color: color },
         blockquote: {
           borderLeft: "3px solid",
