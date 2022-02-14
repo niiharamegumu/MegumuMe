@@ -37,11 +37,9 @@ const BlogDetailBody: VFC<Props> = memo((props) => {
           mb: 2,
           color: color,
         },
-        pre: {
-          w: "calc(100vw - 32px)",
-        },
         "pre code": {
           borderRadius: 10,
+          whiteSpace: "pre-wrap",
         },
         img: {
           w: "100%",
