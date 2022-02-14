@@ -1,7 +1,11 @@
 import { VFC } from "react";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { FcHome, FcServices, FcReading } from "react-icons/fc";
-import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 
 import { NavLink } from "../components/NavLink";
 
@@ -48,6 +52,13 @@ export const Nav: VFC = () => {
         <NavLink path="https://twitter.com/lmgm_m" isBlank={true}>
           <Box fontSize={{ base: "30px", sm: "40px" }} color="blue.500">
             <AiOutlineTwitter />
+          </Box>
+        </NavLink>
+      </GridItem>
+      <GridItem>
+        <NavLink path="https://www.instagram.com/lmgm1223/" isBlank={true}>
+          <Box fontSize={{ base: "30px", sm: "40px" }} color="red.400">
+            <AiOutlineInstagram />
           </Box>
         </NavLink>
       </GridItem>
