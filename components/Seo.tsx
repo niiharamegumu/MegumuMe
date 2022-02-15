@@ -42,6 +42,11 @@ const Seo: VFC<MetaData> = ({
       <meta property="og:image:width" content={String(imgWidth)} />
       <meta property="og:image:height" content={String(imgHeight)} />
       <link rel="canonical" href={url} />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="https://megumu.me/favicon.ico"
+      ></link>
     </Head>
   );
 };
