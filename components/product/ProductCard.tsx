@@ -3,6 +3,7 @@ import { Flex, Image, Stack, Text, Box, Link } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { ProductType } from "../../types/product";
+import { TagButton } from "../TagButton";
 
 type Props = {
   product: ProductType;
@@ -39,11 +40,14 @@ export const ProductCard: VFC<Props> = memo((props) => {
           alt={product.title}
         />
       </Flex>
-      <Stack p={4} color="gray.900" spacing={1}>
+      <Stack p={4} color="gray.900" spacing={2}>
         <Text fontSize="xl">{product.title}</Text>
         <Text fontSize="md">{product.sumally}</Text>
-        <Text fontSize="sm" color="gray.600">
-          {product.skills.join(" / ")}
+        <Text>
+          {product.skills &&
+            product.skills.map((skill) => (
+              <TagButton key={skill} tag={skill} />
+            ))}
         </Text>
       </Stack>
     </Box>
