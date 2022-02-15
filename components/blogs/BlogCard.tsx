@@ -16,7 +16,7 @@ export const BlogCard: VFC<Props> = memo((props) => {
     <Link href={`/blogs/${blog.id}`} _hover={{ border: "none" }}>
       <Box color="gray.900" p={{ base: 2, md: 4 }}>
         <Text
-          fontSize={{ base: "sm", sm: "lg", md: "xl" }}
+          fontSize={{ base: "md", sm: "lg", md: "xl" }}
           fontWeight="bold"
           mb={1}
         >
