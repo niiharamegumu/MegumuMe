@@ -60,11 +60,17 @@ export const Blogs: VFC<Props> = (props) => {
       <Grid
         templateColumns={{
           base: "1fr",
+          md: "repeat(2, 1fr)",
         }}
         gap={6}
       >
         {blogs?.map((blog) => (
-          <GridItem key={blog.id}>
+          <GridItem
+            key={blog.id}
+            bg="gray.300"
+            borderRadius={10}
+            overflow="hidden"
+          >
             <BlogCard blog={blog} />
           </GridItem>
         ))}

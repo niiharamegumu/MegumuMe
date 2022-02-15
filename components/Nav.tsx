@@ -55,13 +55,6 @@ export const Nav: VFC = () => {
           </Box>
         </NavLink>
       </GridItem>
-      <GridItem>
-        <NavLink path="https://www.instagram.com/lmgm1223/" isBlank={true}>
-          <Box fontSize={{ base: "30px", sm: "40px" }} color="red.400">
-            <AiOutlineInstagram />
-          </Box>
-        </NavLink>
-      </GridItem>
     </Grid>
   );
 };

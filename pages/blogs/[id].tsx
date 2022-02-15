@@ -85,8 +85,8 @@ const Post: VFC<Props> = (props) => {
     <>
       <Seo
         pageTitle={blog!.title}
-        pageDescription={`${blog!.description}?fm=webp&w=200`}
-        pageImg={blog!.mainImage.url}
+        pageDescription={blog!.description}
+        pageImg={`${blog!.mainImage}?fm=webp&w=200`}
       />
 
       <BlogDetail blog={blog} />
