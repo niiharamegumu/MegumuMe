@@ -8,7 +8,7 @@ import BlogDetailBody from "./BlogDetailBody";
 
 type Props = { blog: BlogType };
 
-const imageOption = "?fm=webp&w=500";
+const imageOption = "?fm=webp&w=200&q=40&dpr=5";
 
 // eslint-disable-next-line react/display-name
 export const BlogDetail: VFC<Props> = memo((props) => {

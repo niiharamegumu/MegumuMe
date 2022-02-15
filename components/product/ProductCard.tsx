@@ -9,7 +9,7 @@ type Props = {
   product: ProductType;
 };
 
-const imageOption = "?fm=webp&w=500";
+const imageOption = "?fm=webp&w=200&q=30&dpr=4";
 
 // eslint-disable-next-line react/display-name
 export const ProductCard: VFC<Props> = memo((props) => {

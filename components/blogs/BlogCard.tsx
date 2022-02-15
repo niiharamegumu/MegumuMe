@@ -7,8 +7,6 @@ import { TagButton } from "../TagButton";
 
 type Props = { blog: BlogType };
 
-const imageOption = "?fm=webp&w=500";
-
 // eslint-disable-next-line react/display-name
 export const BlogCard: VFC<Props> = memo((props) => {
   const { blog } = props;
