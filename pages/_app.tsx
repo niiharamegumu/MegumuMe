@@ -3,14 +3,20 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import { Layout } from "../components/Layout";
 import { darkTheme } from "../theme/theme";
+import GoogleAnalytics from "../components/GoogleAnalytics";
+import usePageView from "../hooks/usePageView";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  usePageView();
   return (
-    <ChakraProvider theme={darkTheme} resetCSS>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <>
+      <GoogleAnalytics />
+      <ChakraProvider theme={darkTheme} resetCSS>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </>
   );
 }
 
