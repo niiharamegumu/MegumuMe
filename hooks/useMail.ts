@@ -7,7 +7,7 @@ export const useMail = () => {
   const [message, setMessage] = useState("");
 
   const send = async () => {
-    await fetch("/api/mail", {
+    await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/mail`, {
       method: "POST",
       body: `
 名前
