@@ -38,13 +38,6 @@ export const Nav: VFC = () => {
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/contact/">
-          <Box fontSize={{ base: "30px", md: "40px" }}>
-            <FcInvite />
-          </Box>
-        </NavLink>
-      </GridItem>
-      <GridItem>
         <NavLink path="https://github.com/niiharamegumu" isBlank={true}>
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <AiFillGithub />
