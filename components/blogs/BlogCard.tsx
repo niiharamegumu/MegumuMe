@@ -23,7 +23,7 @@ export const BlogCard: VFC<Props> = memo((props) => {
             ))}
         </Text>
         <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600">
-          {format(new Date(blog.updatedAt), "yyyy.MM.dd")}
+          {format(new Date(blog.createdAt), "yyyy.MM.dd")}
         </Text>
       </Stack>
     </Link>

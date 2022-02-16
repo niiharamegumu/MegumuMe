@@ -30,7 +30,7 @@ export const BlogDetail: VFC<Props> = memo((props) => {
           {blog.title}
         </Heading>
         <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600" mb={2}>
-          {format(new Date(blog.updatedAt), "yyyy.MM.dd")}
+          {format(new Date(blog.createdAt), "yyyy.MM.dd")}
         </Text>
         {blog.tags &&
           blog.tags.map((tag) => <TagButton key={tag.id} tag={tag.tagName} />)}
