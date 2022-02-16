@@ -15,6 +15,7 @@ import { FaAsterisk } from "react-icons/fa";
 import { FcInvite } from "react-icons/fc";
 
 import { HeadH2 } from "../components/style/Common";
+import { useMail } from "../hooks/useMail";
 
 interface IFormInput {
   firstName: string;
@@ -28,9 +29,13 @@ const Contact = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<IFormInput>();
+  const { setFirstName, setLastName, setMessage, send } = useMail();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
+    setFirstName(data.firstName);
+    setLastName(data.lastName);
+    setMessage(data.body);
+    send();
   };
 
   return (
@@ -43,28 +48,8 @@ const Contact = () => {
         <Stack spacing={10}>
           <Flex justify="center" gap={5}>
             <Box flexBasis="50%">
-              <FormLabel htmlFor="firstName" display="flex">
-                姓
-                <Box fontSize="8px" color="red.300">
-                  <FaAsterisk />
-                </Box>
-              </FormLabel>
-              <Controller
-                name="firstName"
-                rules={{ required: true }}
-                control={control}
-                defaultValue=""
-                render={({ field }) => <Input {...field} id="firstName" />}
-              />
-              {errors.firstName && (
-                <Text color="red.400" mt={2}>
-                  姓を入力して下さい。
-                </Text>
-              )}
-            </Box>
-            <Box flexBasis="50%">
               <FormLabel htmlFor="lastName" display="flex">
-                名
+                姓
                 <Box fontSize="8px" color="red.300">
                   <FaAsterisk />
                 </Box>
@@ -77,6 +62,26 @@ const Contact = () => {
                 render={({ field }) => <Input {...field} id="lastName" />}
               />
               {errors.lastName && (
+                <Text color="red.400" mt={2}>
+                  姓を入力して下さい。
+                </Text>
+              )}
+            </Box>
+            <Box flexBasis="50%">
+              <FormLabel htmlFor="firstName" display="flex">
+                名
+                <Box fontSize="8px" color="red.300">
+                  <FaAsterisk />
+                </Box>
+              </FormLabel>
+              <Controller
+                name="firstName"
+                rules={{ required: true }}
+                control={control}
+                defaultValue=""
+                render={({ field }) => <Input {...field} id="firstName" />}
+              />
+              {errors.firstName && (
                 <Text color="red.400" mt={2}>
                   名を入力して下さい。
                 </Text>
