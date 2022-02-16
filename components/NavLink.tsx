@@ -15,8 +15,8 @@ export const NavLink: VFC<Props> = (props) => {
         bg="gray.700"
         justify="center"
         alignItems="center"
-        w={{ base: "50px", sm: "80px" }}
-        h={{ base: "50px", sm: "80px" }}
+        w={{ base: "50px", md: "80px" }}
+        h={{ base: "50px", md: "80px" }}
         textTransform="uppercase"
         borderRadius={10}
       >
