@@ -1,5 +1,4 @@
 import React from "react";
-import { FcIdea } from "react-icons/fc";
 import {
   Box,
   Button,
@@ -11,6 +10,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { FaAsterisk } from "react-icons/fa";
 import { FcInvite } from "react-icons/fc";
 
@@ -20,6 +20,7 @@ import { useMail } from "../hooks/useMail";
 interface IFormInput {
   firstName: string;
   lastName: string;
+  email: string;
   body: string;
 }
 
@@ -29,11 +30,12 @@ const Contact = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<IFormInput>();
-  const { setFirstName, setLastName, setMessage, send } = useMail();
+  const { setFirstName, setLastName, setEmail, setMessage, send } = useMail();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     setFirstName(data.firstName);
     setLastName(data.lastName);
+    setEmail(data.email);
     setMessage(data.body);
     send();
   };
@@ -88,6 +90,41 @@ const Contact = () => {
               )}
             </Box>
           </Flex>
+          <Box>
+            <FormLabel htmlFor="email" display="flex">
+              メールアドレス
+              <Box fontSize="8px" color="red.300">
+                <FaAsterisk />
+              </Box>
+            </FormLabel>
+            <Controller
+              name="email"
+              rules={{
+                required: true,
+                maxLength: 60,
+                pattern: {
+                  value:
+                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  message: "メールアドレスの形式が不正です",
+                },
+              }}
+              control={control}
+              defaultValue=""
+              render={({ field }) => <Input {...field} id="email" />}
+            />
+            <Text color="red.400" mt={2}>
+              <ErrorMessage
+                errors={errors}
+                name="email"
+                message={errors.email?.message}
+              />
+            </Text>
+            {errors.email && (
+              <Text color="red.400" mt={2}>
+                メールアドレスを入力して下さい。
+              </Text>
+            )}
+          </Box>
           <Box>
             <FormLabel htmlFor="body" display="flex">
               お問い合わせ内容
