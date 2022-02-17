@@ -47,12 +47,8 @@ export const ProductCard: VFC<Props> = memo((props) => {
         <Text fontSize="md" mb={2}>
           {product.sumally}
         </Text>
-        <Text>
-          {product.skills &&
-            product.skills.map((skill) => (
-              <TagButton key={skill} tag={skill} />
-            ))}
-        </Text>
+        {product.skills &&
+          product.skills.map((skill) => <TagButton key={skill} tag={skill} />)}
       </Box>
     </Box>
   );
