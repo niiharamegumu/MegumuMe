@@ -10,7 +10,10 @@ export const MainLayout: VFC<Props> = (props) => {
   const { children, rightComponents } = props;
   return (
     <Grid
-      templateColumns={{ base: "1fr", lg: "4fr auto" }}
+      templateColumns={{
+        base: "minmax(0,1fr)",
+        lg: "minmax(0,4fr) auto",
+      }}
       alignItems="start"
       gap={6}
       mb={{ base: 2, md: 6, lg: 0 }}
