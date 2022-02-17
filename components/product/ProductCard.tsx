@@ -40,16 +40,20 @@ export const ProductCard: VFC<Props> = memo((props) => {
           alt={product.title}
         />
       </Flex>
-      <Stack p={4} color="gray.900" spacing={2}>
-        <Text fontSize="xl">{product.title}</Text>
-        <Text fontSize="md">{product.sumally}</Text>
+      <Box p={4} color="gray.900">
+        <Text fontSize="xl" mb={2}>
+          {product.title}
+        </Text>
+        <Text fontSize="md" mb={2}>
+          {product.sumally}
+        </Text>
         <Text>
           {product.skills &&
             product.skills.map((skill) => (
               <TagButton key={skill} tag={skill} />
             ))}
         </Text>
-      </Stack>
+      </Box>
     </Box>
   );
 });

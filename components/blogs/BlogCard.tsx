@@ -1,5 +1,5 @@
 import { memo, VFC } from "react";
-import { Box, Flex, Image, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { format } from "date-fns";
 
 import { BlogType } from "../../types/blog";
@@ -12,11 +12,15 @@ export const BlogCard: VFC<Props> = memo((props) => {
   const { blog } = props;
   return (
     <Link href={`/blogs/${blog.id}`} _hover={{ border: "none" }}>
-      <Stack color="gray.900" p={{ base: 4, md: 6 }} spacing={2}>
-        <Text fontSize={{ base: "md", sm: "lg", md: "xl" }} fontWeight="bold">
+      <Box color="gray.900" p={{ base: 4, md: 6 }}>
+        <Text
+          fontSize={{ base: "md", sm: "lg", md: "xl" }}
+          fontWeight="bold"
+          mb={2}
+        >
           {blog.title}
         </Text>
-        <Text>
+        <Text mb={1}>
           {blog.tags &&
             blog.tags.map((tag) => (
               <TagButton key={tag.id} tag={tag.tagName} />
@@ -25,7 +29,7 @@ export const BlogCard: VFC<Props> = memo((props) => {
         <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600">
           {format(new Date(blog.createdAt), "yyyy.MM.dd")}
         </Text>
-      </Stack>
+      </Box>
     </Link>
   );
 });
