@@ -61,7 +61,7 @@ const BlogDetailBody: VFC<Props> = memo((props) => {
         },
         "pre code": {
           borderRadius: 10,
-          whiteSpace: "pre-wrap",
+          overflow: "scroll",
         },
         img: {
           w: "100%",
