@@ -20,13 +20,9 @@ export const BlogCard: VFC<Props> = memo((props) => {
         >
           {blog.title}
         </Text>
-        <Text mb={1}>
-          {blog.tags &&
-            blog.tags.map((tag) => (
-              <TagButton key={tag.id} tag={tag.tagName} />
-            ))}
-        </Text>
-        <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600">
+        {blog.tags &&
+          blog.tags.map((tag) => <TagButton key={tag.id} tag={tag.tagName} />)}
+        <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600" mt={2}>
           {format(new Date(blog.createdAt), "yyyy.MM.dd")}
         </Text>
       </Box>
