@@ -21,7 +21,7 @@ https://megumu.me
 
 - NextJS
 - TS
-- TailwindCSS
+- Chakra UI
 - Vercel
 - microCMS
 - cheerio
