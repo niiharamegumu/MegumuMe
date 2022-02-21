@@ -25,6 +25,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       changefreq: "weekly",
     });
   });
+  context.res.setHeader(
+    "Cache-Control",
+    "s-maxage=86400, stale-while-revalidate"
+  );
   return getServerSideSitemap(context, fields);
 };
 
