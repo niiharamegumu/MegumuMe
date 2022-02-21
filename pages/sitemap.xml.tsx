@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   });
   context.res.setHeader(
     "Cache-Control",
-    "s-maxage=86400, stale-while-revalidate"
+    "max-age=86400, stale-while-revalidate=360"
   );
   return getServerSideSitemap(context, fields);
 };
