@@ -12,8 +12,11 @@ const BlogsNav: VFC = () => {
     borderColor: "white",
     color: "white",
   };
-
   const isActivePage = (path: string): boolean => path === activePage;
+  const isActivePageRegex = (path: string): boolean => {
+    const regex = new RegExp(path, "g");
+    return regex.test(activePage);
+  };
 
   return (
     <Flex
@@ -30,9 +33,9 @@ const BlogsNav: VFC = () => {
         megumu.me
       </Link>
       <Link
-        href="/blogs/notes/"
+        href="/blogs/notes/1"
         _hover={{ textDecoration: "none" }}
-        {...(isActivePage("/blogs/notes/") ? activeStyles : styles)}
+        {...(isActivePageRegex("/blogs/notes/[0-9]*") ? activeStyles : styles)}
       >
         note.com
       </Link>
