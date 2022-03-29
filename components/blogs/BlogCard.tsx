@@ -9,28 +9,16 @@ type Props = {
   link: string;
   title: string;
   createdAt: string;
-  isTargetBlank?: boolean;
+  isBlank?: boolean;
   tags?: BlogType["tags"];
 };
 
 // eslint-disable-next-line react/display-name
 export const BlogCard: VFC<Props> = memo((props) => {
-  const { link, title, createdAt, isTargetBlank, tags } = props;
-  const linkProps = (url: string) => {
-    if (url.match("^http")) {
-      return {
-        target: "_blank",
-        rel: "noopener noreferrer",
-      };
-    }
-    return {};
-  };
+  const { link, title, createdAt, isBlank, tags } = props;
+
   return (
-    <Link
-      href={link}
-      _hover={{ border: "none" }}
-      {...(isTargetBlank ? linkProps(link) : {})}
-    >
+    <Link href={link} _hover={{ border: "none" }} isExternal={isBlank}>
       <Box color="gray.900" p={{ base: 4, md: 6 }}>
         <Text
           fontSize={{ base: "md", sm: "lg", md: "xl" }}

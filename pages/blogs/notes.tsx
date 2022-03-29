@@ -79,7 +79,7 @@ const BlogsNotes: VFC<Props> = (props) => {
               link={note.noteUrl}
               title={note.name}
               createdAt={note.publishAt}
-              isTargetBlank={true}
+              isBlank={true}
             />
           </GridItem>
         ))}
