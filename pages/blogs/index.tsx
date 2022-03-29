@@ -4,11 +4,12 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import useSWR from "swr";
 import { FcReading } from "react-icons/fc";
 
-import Seo from "../components/Seo";
-import { BlogCard } from "../components/blogs/BlogCard";
-import { HeadH2 } from "../components/style/Common";
-import { clientBlogs } from "../libs/microCMS/client";
-import { BlogType } from "../types/blog";
+import Seo from "../../components/Seo";
+import { BlogCard } from "../../components/blogs/BlogCard";
+import { HeadH2 } from "../../components/style/Common";
+import { clientBlogs } from "../../libs/microCMS/client";
+import { BlogType } from "../../types/blog";
+import BlogsNav from "../../components/blogs/BlogsNav";
 
 type Props = {
   staticBlogs: BlogType[];
@@ -57,6 +58,7 @@ export const Blogs: VFC<Props> = (props) => {
         <FcReading />
         blogs
       </HeadH2>
+      <BlogsNav />
       <Grid
         templateColumns={{
           base: "1fr",
@@ -71,7 +73,12 @@ export const Blogs: VFC<Props> = (props) => {
             borderRadius={10}
             overflow="hidden"
           >
-            <BlogCard blog={blog} />
+            <BlogCard
+              link={`/article/${blog.id}`}
+              title={blog.title}
+              createdAt={blog.createdAt}
+              tags={blog.tags}
+            />
           </GridItem>
         ))}
       </Grid>

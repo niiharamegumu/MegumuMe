@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const fields: ISitemapField[] = [];
   postsData.forEach((data: PostData) => {
     fields.push({
-      loc: `${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${data.id}`,
+      loc: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${data.id}`,
       lastmod: format(new Date(data.updatedAt), "yyyy-MM-dd"),
       priority: 1,
       changefreq: "weekly",
