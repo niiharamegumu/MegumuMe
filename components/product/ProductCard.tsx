@@ -1,5 +1,5 @@
 import { memo, VFC } from "react";
-import { Flex, Image, Stack, Text, Box, Link } from "@chakra-ui/react";
+import { Flex, Image, Stack, Text, Box, Link, Heading } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { ProductType } from "../../types/product";
@@ -41,9 +41,9 @@ export const ProductCard: VFC<Props> = memo((props) => {
         />
       </Flex>
       <Box p={4} color="gray.900">
-        <Text fontSize="xl" mb={2}>
+        <Heading as="h3" fontSize="xl" mb={2}>
           {product.title}
-        </Text>
+        </Heading>
         <Text fontSize="md" mb={2}>
           {product.sumally}
         </Text>

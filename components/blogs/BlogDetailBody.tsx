@@ -44,7 +44,7 @@ const BlogDetailBody: VFC<Props> = memo((props) => {
           fontWeight: "bold",
           color: color,
         },
-        p: { fontSize: "md", color: color },
+        p: { fontSize: "md", color: color, lineHeight: "1.8" },
         blockquote: {
           borderLeft: "3px solid",
           borderColor: "gray.500",

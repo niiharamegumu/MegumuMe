@@ -26,7 +26,13 @@ export const BlogDetail: VFC<Props> = memo((props) => {
       </Flex>
 
       <Box bg="gray.300" px={{ base: 4, lg: 20 }} py={14}>
-        <Heading fontSize={{ base: "2xl", sm: "4xl" }} fontWeight="bold" mb={4}>
+        <Heading
+          as="h1"
+          fontSize={{ base: "2xl", sm: "4xl" }}
+          fontWeight="bold"
+          lineHeight={1.6}
+          mb={4}
+        >
           {blog.title}
         </Heading>
         <Text fontSize={{ base: "xs", sm: "md" }} color="gray.600" mb={2}>
