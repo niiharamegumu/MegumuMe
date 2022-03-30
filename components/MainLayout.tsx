@@ -20,6 +20,7 @@ export const MainLayout: VFC<Props> = (props) => {
     >
       <GridItem>{children}</GridItem>
       <GridItem
+        as="nav"
         position={{ base: "fixed", lg: "sticky" }}
         top={{ lg: 10 }}
         bottom={{ base: 0, lg: "unset" }}
