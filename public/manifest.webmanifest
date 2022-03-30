@@ -1,10 +1,10 @@
 {
-  "theme_color": "#171923",
+  "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/?source=pwa",
-  "name": "megumu.me",
+  "name": "MegumuMe",
   "short_name": "MgM",
   "description": "Niihara Megumu Original Blog.",
   "icons": [

@@ -12,9 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name="theme-color" content="#171923" />
+        <meta name="theme-color" content="#fff" />
         <link rel="manifest" href="./manifest.webmanifest" />
-        <link rel="apple-touch-icon" href="./icon.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="192x192"
+          href="./icon-192x192.png"
+        />
       </Head>
       <GoogleAnalytics />
       <ChakraProvider theme={darkTheme} resetCSS>
