@@ -8,6 +8,7 @@ export const Footer: VFC = () => {
       borderTop="1px solid"
       borderColor="gray.600"
       color="gray.400"
+      display={{ base: "none", lg: "block" }}
       textAlign="center"
       py={4}
     >
