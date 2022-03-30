@@ -24,6 +24,7 @@ export const BlogCard: VFC<Props> = memo((props) => {
           as="h3"
           fontSize={{ base: "md", sm: "lg", md: "xl" }}
           fontWeight="bold"
+          lineHeight={{ base: 1.8, md: 1.6 }}
           mb={2}
         >
           {title}
