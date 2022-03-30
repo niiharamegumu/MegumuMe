@@ -5,11 +5,17 @@ import { Layout } from "../components/Layout";
 import { darkTheme } from "../theme/theme";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import usePageView from "../hooks/usePageView";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   usePageView();
   return (
     <>
+      <Head>
+        <meta name="theme-color" content="#171923" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="./icon.png" />
+      </Head>
       <GoogleAnalytics />
       <ChakraProvider theme={darkTheme} resetCSS>
         <Layout>
