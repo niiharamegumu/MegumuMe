@@ -5,12 +5,13 @@ type Props = {
   children: React.ReactNode;
   path: string;
   isBlank?: boolean;
+  ariaLabel?: string;
 };
 
 export const NavLink: VFC<Props> = (props) => {
-  const { children, path, isBlank = false } = props;
+  const { children, path, isBlank = false, ariaLabel } = props;
   return (
-    <Link href={path} isExternal={isBlank}>
+    <Link href={path} isExternal={isBlank} aria-label={ariaLabel}>
       <Flex
         bg="gray.700"
         justify="center"
