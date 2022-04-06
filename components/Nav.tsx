@@ -17,35 +17,43 @@ export const Nav: VFC = () => {
       justifyContent={{ base: "center", lg: "end" }}
     >
       <GridItem>
-        <NavLink path="/">
+        <NavLink path="/" ariaLabel="Home Page">
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <FcHome />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/products/">
+        <NavLink path="/products/" ariaLabel="Product Lisst">
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <FcServices />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/blogs/">
+        <NavLink path="/blogs/" ariaLabel="Blog List">
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <FcReading />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="https://github.com/niiharamegumu" isBlank={true}>
+        <NavLink
+          path="https://github.com/niiharamegumu"
+          isBlank={true}
+          ariaLabel="To Github"
+        >
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <AiFillGithub />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="https://twitter.com/lmgm_m" isBlank={true}>
+        <NavLink
+          path="https://twitter.com/lmgm_m"
+          isBlank={true}
+          ariaLabel="To Twitter"
+        >
           <Box fontSize={{ base: "30px", md: "40px" }} color="blue.500">
             <AiOutlineTwitter />
           </Box>
