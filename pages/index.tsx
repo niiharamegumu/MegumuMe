@@ -48,13 +48,20 @@ const Home: NextPage = () => {
           borderRadius={10}
           p={{ base: 4, md: 6 }}
         >
-          <HeadH3>Niihara Megumu（新原 龍）</HeadH3>
-          <Text fontSize="sm">1996.12.23 25 years old.</Text>
-          <Text fontSize="sm">宮崎生まれ、宮崎育ち</Text>
-          <Text fontSize="sm">
-            フロントエンドを主にしている地方在住エンジニア。
+          <HeadH3>Gumu（Niihara Megumu）</HeadH3>
+          <Text fontSize="sm" as="p" mb={2}>
+            1996.12.23 25 years old.
           </Text>
-          <Text fontSize="sm">独学で日々学んでいます。</Text>
+          <Text fontSize="sm" as="p" mb={2}>
+            宮崎生まれ、宮崎育ち
+            <br />
+            フロントエンドを主にしている地方在住エンジニア。
+            <br />
+            独学で日々学んでいます。
+          </Text>
+          <Text fontSize="sm" as="p">
+            宮崎でずっと生きていく手段を模索中・・・
+          </Text>
         </Box>
       </Box>
 
@@ -257,36 +264,7 @@ const Home: NextPage = () => {
           Career
         </HeadH2>
         <Accordion allowToggle>
-          <AccordionContent title="2019年03月 宮崎大学 卒業">
-            宮崎大学 教育文化学部 人間社会課程
-            社会システムコースにて、経済学、法学などを学ぶ。
-            <br />
-            専攻は経済学。
-            <br />
-            産業革命の歴史、経済を勉強しているときにパソコンの経済を知る。
-            <br />
-            これからの時代は、「パソコンだ！」と感じ、本屋さんでHTML,CSSの本を買い独学を開始。
-            <br />
-            基本的なWebページを作成しながら傍らWeb系企業の就職活動を開始。
-          </AccordionContent>
-          <AccordionContent title="2019年04月 株式会社アラタナ 新卒入社">
-            株式会社アラタナ 新卒入社
-            <br />
-            配属は、バックエンドエンジニア。AWS・Pythonを使用しAPIの開発、データ連携周りの保守や管理を行う。
-            <br />
-            PagerDuty、DataDogLambda、Cloud Watch
-            Logs、SNS、S3を活用し、エラー監視ツールの強化開発を行う。
-          </AccordionContent>
-          <AccordionContent title="2020年04月 株式会社ZOZOテクノロジーズへ合併">
-            株式会社アラタナが株式会社ZOZOテクノロジーズへ吸収合併。
-            <br />
-            合併後も変わらずアラタナの頃の開発を行う。
-            <br />
-            データ管理ダッシュボードの開発のサポートを行った際にフロントエンドの楽しさに気づく。
-            <br />
-            一身上の都合により退社（健康上の都合）
-          </AccordionContent>
-          <AccordionContent title="2020年12月 株式会社Libertyship 転職">
+          <AccordionContent title="2020年12月 株式会社Libertyship 現在">
             前職で魅力を感じたフロントエンドのお仕事をすべくアラタナ時代のご縁があり株式会社Libertyshipへジョイン。
             <br />
             年間10件以上のサイトのメイン開発兼プロジェクトマネジメントを行い
@@ -301,6 +279,35 @@ const Home: NextPage = () => {
             の一員として、Shopifyのサービスを活用したECサイトの開発・運用を行う。
             <br />
             直近では、自社サービス内において、サウナ施設の予約システム・ロケーション管理システムをShopifyAppを使用して構築する。
+          </AccordionContent>
+          <AccordionContent title="2020年04月 株式会社ZOZOテクノロジーズへ合併">
+            株式会社アラタナが株式会社ZOZOテクノロジーズへ吸収合併。
+            <br />
+            合併後も変わらずアラタナの頃の開発を行う。
+            <br />
+            データ管理ダッシュボードの開発のサポートを行った際にフロントエンドの楽しさに気づく。
+            <br />
+            一身上の都合により退社（健康上の都合）
+          </AccordionContent>
+          <AccordionContent title="2019年04月 株式会社アラタナ 新卒入社">
+            株式会社アラタナ 新卒入社
+            <br />
+            配属は、バックエンドエンジニア。AWS・Pythonを使用しAPIの開発、データ連携周りの保守や管理を行う。
+            <br />
+            PagerDuty、DataDog、Lambda、Cloud Watch
+            Logs、SNS、S3を活用し、エラー監視ツールの強化開発を行う。
+          </AccordionContent>
+          <AccordionContent title="2019年03月 宮崎大学 卒業">
+            宮崎大学 教育文化学部 人間社会課程
+            社会システムコースにて、経済学、法学などを学ぶ。
+            <br />
+            専攻は経済学。
+            <br />
+            産業革命の歴史、経済を勉強しているときにパソコンの経済を知る。
+            <br />
+            これからの時代は、「パソコンだ！」と感じ、本屋さんでHTML,CSSの本を買い独学を開始。
+            <br />
+            基本的なWebページを作成しながら傍らWeb系企業の就職活動を開始。
           </AccordionContent>
         </Accordion>
       </Box>
