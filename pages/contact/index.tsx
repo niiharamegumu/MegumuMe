@@ -7,6 +7,7 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
+import { VFC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FcFeedback } from "react-icons/fc";
 
@@ -14,7 +15,7 @@ import Seo from "../../components/Seo";
 import { HeadH2 } from "../../components/style/Common";
 import ContactType from "../../types/contact";
 
-const Contact = () => {
+const Contact: VFC = () => {
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
   const {
     handleSubmit,
@@ -57,7 +58,7 @@ const Contact = () => {
     <>
       <Seo
         pageTitle="Contact"
-        pageDescription="お問合さえはこちら"
+        pageDescription="お問い合わせはこちら"
         pageImg="https://megumu-me.vercel.app/icon.png"
         pageImgWidth={1280}
         pageImgHeight={640}

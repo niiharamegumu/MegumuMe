@@ -16,7 +16,7 @@ export const Layout: VFC<Props> = ({ children }) => {
       <Container maxW="container.xl">
         <Header />
         <MainLayout rightComponents={<Nav />}>
-          <Box p={{ base: "40px 0 120px", lg: "40px 0" }}>{children}</Box>
+          <Box p={{ base: "40px 0 20px", lg: "40px 0" }}>{children}</Box>
         </MainLayout>
         <Footer />
       </Container>
