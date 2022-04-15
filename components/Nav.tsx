@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import { FcHome, FcServices, FcReading } from "react-icons/fc";
+import { FcHome, FcServices, FcReading, FcFeedback } from "react-icons/fc";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 
 import { NavLink } from "../components/NavLink";
@@ -9,7 +9,7 @@ export const Nav: VFC = () => {
   return (
     <Grid
       templateColumns={{
-        base: "repeat(auto-fit,50px)",
+        base: "repeat(auto-fit,40px)",
         md: "repeat(auto-fit,80px)",
         lg: "repeat(3,80px)",
       }}
@@ -34,6 +34,13 @@ export const Nav: VFC = () => {
         <NavLink path="/blogs/" ariaLabel="Blog List">
           <Box fontSize={{ base: "30px", md: "40px" }}>
             <FcReading />
+          </Box>
+        </NavLink>
+      </GridItem>
+      <GridItem>
+        <NavLink path="/contact/" ariaLabel="Contact">
+          <Box fontSize={{ base: "30px", md: "40px" }}>
+            <FcFeedback />
           </Box>
         </NavLink>
       </GridItem>
