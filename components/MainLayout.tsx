@@ -24,7 +24,7 @@ export const MainLayout: VFC<Props> = (props) => {
         borderRadius={{ base: 30, lg: 0 }}
         position={{ base: "fixed", lg: "sticky" }}
         top={{ lg: 10 }}
-        bottom={{ base: 4, lg: "unset" }}
+        bottom={{ base: 7, lg: "unset" }}
         left={0}
         right={0}
         m={{ base: "auto", lg: 0 }}
