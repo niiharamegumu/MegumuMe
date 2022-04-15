@@ -1,6 +1,6 @@
 import { Flex, Link } from "@chakra-ui/react";
 import { VFC } from "react";
-import { FcUndo, FcRedo } from "react-icons/fc";
+import { FcPrevious, FcNext } from "react-icons/fc";
 
 type Props = {
   pagePath: string;
@@ -23,13 +23,13 @@ const Pagination: VFC<Props> = (props) => {
         href={`${pagePath}${prePage}`}
         display={prePage <= 0 ? "none" : "block"}
       >
-        <FcUndo />
+        <FcPrevious />
       </Link>
       <Link
         href={`${pagePath}${nextPage}`}
         display={isLastPage ? "none" : "block"}
       >
-        <FcRedo />
+        <FcNext />
       </Link>
     </Flex>
   );
