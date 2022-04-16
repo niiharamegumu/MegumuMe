@@ -9,11 +9,24 @@ import {
 } from "@chakra-ui/react";
 import { VFC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { FcFeedback } from "react-icons/fc";
 
 import Seo from "../../components/Seo";
 import { HeadH2 } from "../../components/style/Common";
 import ContactType from "../../types/contact";
+
+const schema = yup
+  .object({
+    name: yup.string().required("お名前をご記入ください。"),
+    mail: yup
+      .string()
+      .email("メールアドレスの形式が不正です")
+      .required("メールアドレスをご記入ください。"),
+    body: yup.string().required("お問い合わせ内容をご記入ください。"),
+  })
+  .required();
 
 const Contact: VFC = () => {
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
@@ -22,7 +35,9 @@ const Contact: VFC = () => {
     register,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactType>();
+  } = useForm<ContactType>({
+    resolver: yupResolver(schema),
+  });
   const toast = useToast();
 
   let sendContact = async (contactData: ContactType): Promise<boolean> => {
@@ -73,9 +88,7 @@ const Contact: VFC = () => {
           <Input
             id="name"
             placeholder="お名前をご記入ください。"
-            {...register("name", {
-              required: "お名前をご記入ください。",
-            })}
+            {...register("name")}
             color="gray.900"
             bg="gray.200"
             _placeholder={{ color: "gray.500" }}
@@ -90,14 +103,7 @@ const Contact: VFC = () => {
             <Input
               id="mail"
               placeholder="xxxx@xxxx.com"
-              {...register("mail", {
-                required: "メールアドレスをご記入ください。",
-                pattern: {
-                  value:
-                    /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/,
-                  message: "メールアドレスの形式が違います",
-                },
-              })}
+              {...register("mail")}
               color="gray.900"
               bg="gray.200"
               _placeholder={{ color: "gray.500" }}
@@ -113,9 +119,7 @@ const Contact: VFC = () => {
             <Textarea
               id="body"
               placeholder="お問い合わせ内容をご記入ください。"
-              {...register("body", {
-                required: "お問い合わせ内容をご記入ください。",
-              })}
+              {...register("body")}
               h="30vh"
               color="gray.900"
               bg="gray.200"
