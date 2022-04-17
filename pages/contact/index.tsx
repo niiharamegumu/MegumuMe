@@ -19,12 +19,12 @@ import ContactType from "../../types/contact";
 
 const schema = yup
   .object({
-    name: yup.string().required("お名前をご記入ください。"),
+    name: yup.string().trim().required("お名前をご記入ください。"),
     mail: yup
       .string()
       .email("メールアドレスの形式が不正です")
       .required("メールアドレスをご記入ください。"),
-    body: yup.string().required("お問い合わせ内容をご記入ください。"),
+    body: yup.string().trim().required("お問い合わせ内容をご記入ください。"),
   })
   .required();
 
