@@ -40,7 +40,7 @@ const Contact: VFC = () => {
   });
   const toast = useToast();
 
-  let sendContact = async (contactData: ContactType): Promise<boolean> => {
+  const sendContact = async (contactData: ContactType): Promise<boolean> => {
     const res = await fetch(BASE_URL + "/api/contact", {
       method: "POST",
       headers: {
@@ -57,14 +57,14 @@ const Contact: VFC = () => {
     toast({
       status: isSuccess ? "success" : "error",
       title: isSuccess
-        ? "お問い合わせありがとうございます!"
+        ? "お問い合わせありがとうございます！"
         : "お問い合わせでエラーが発生しました...",
       description: isSuccess
-        ? "ご確認の上、ご記載いただいたメールアドレス宛にご連絡致します。"
+        ? "内容をご確認致します。確認後、ご記載いただいたメールアドレス宛にご連絡致しますので、お待ちください。"
         : "ページの読み込み等を行って再度お問い合わせください。",
-      position: "top",
+      position: "bottom-right",
       isClosable: true,
-      duration: 5000,
+      duration: 10000,
     });
     isSuccess && reset({ name: "", mail: "", body: "" });
   };
@@ -87,7 +87,7 @@ const Contact: VFC = () => {
           <FormLabel htmlFor="name">名前</FormLabel>
           <Input
             id="name"
-            placeholder="お名前をご記入ください。"
+            placeholder="新原 めぐむ"
             {...register("name")}
             color="gray.900"
             bg="gray.200"
@@ -102,7 +102,7 @@ const Contact: VFC = () => {
             </FormLabel>
             <Input
               id="mail"
-              placeholder="xxxx@xxxx.com"
+              placeholder="info@example.com"
               {...register("mail")}
               color="gray.900"
               bg="gray.200"
