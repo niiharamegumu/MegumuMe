@@ -1,7 +1,7 @@
-import { VFC } from "react";
-import Script from "next/script";
+import { VFC } from 'react'
+import Script from 'next/script'
 
-import { existsGaId, GA_ID } from "../libs/gtag";
+import { existsGaId, GA_ID } from '../libs/gtag'
 
 const GoogleAnalytics: VFC = () => (
   <>
@@ -23,6 +23,6 @@ const GoogleAnalytics: VFC = () => (
       </>
     )}
   </>
-);
+)
 
-export default GoogleAnalytics;
+export default GoogleAnalytics

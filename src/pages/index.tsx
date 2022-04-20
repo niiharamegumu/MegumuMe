@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
 import {
   Accordion,
   Box,
@@ -6,12 +6,12 @@ import {
   Grid,
   GridItem,
   Link,
-  Text,
-} from "@chakra-ui/react";
-import { FcIdea, FcCommandLine, FcBusinessman } from "react-icons/fc";
-import { AiFillHtml5 } from "react-icons/ai";
-import { FaCss3Alt, FaReact, FaVuejs } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
+  Text
+} from '@chakra-ui/react'
+import { FcIdea, FcCommandLine, FcBusinessman } from 'react-icons/fc'
+import { AiFillHtml5 } from 'react-icons/ai'
+import { FaCss3Alt, FaReact, FaVuejs } from 'react-icons/fa'
+import { IoLogoJavascript } from 'react-icons/io'
 import {
   SiPhp,
   SiNextdotjs,
@@ -19,12 +19,12 @@ import {
   SiPython,
   SiShopify,
   SiNuxtdotjs,
-  SiFirebase,
-} from "react-icons/si";
+  SiFirebase
+} from 'react-icons/si'
 
-import Seo from "../components/Seo";
-import { HeadH2, HeadH3 } from "../components/style/Common";
-import { AccordionContent } from "../components/AccordionContent";
+import Seo from '../components/Seo'
+import { HeadH2, HeadH3 } from '../components/style/Common'
+import { AccordionContent } from '../components/AccordionContent'
 
 const Home: NextPage = () => {
   return (
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           Skills
         </HeadH2>
         <Grid
-          templateColumns={{ base: "repeat(2,1fr)", sm: "repeat(4,1fr)" }}
+          templateColumns={{ base: 'repeat(2,1fr)', sm: 'repeat(4,1fr)' }}
           gap={4}
           alignItems="center"
         >
@@ -312,7 +312,7 @@ const Home: NextPage = () => {
         </Accordion>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

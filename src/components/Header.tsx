@@ -1,7 +1,7 @@
-import { VFC } from "react";
-import Link from "next/link";
-import { Box, Flex } from "@chakra-ui/react";
-import { FaKeyboard } from "react-icons/fa";
+import { VFC } from 'react'
+import Link from 'next/link'
+import { Box, Flex } from '@chakra-ui/react'
+import { FaKeyboard } from 'react-icons/fa'
 
 export const Header: VFC = () => {
   return (
@@ -24,5 +24,5 @@ export const Header: VFC = () => {
         </Flex>
       </Link>
     </Box>
-  );
-};
+  )
+}

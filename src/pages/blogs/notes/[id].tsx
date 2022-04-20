@@ -1,74 +1,74 @@
-import { Grid, GridItem } from "@chakra-ui/react";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { VFC } from "react";
-import { FcReading } from "react-icons/fc";
+import { Grid, GridItem } from '@chakra-ui/react'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
+import { VFC } from 'react'
+import { FcReading } from 'react-icons/fc'
 
-import { BlogCard } from "../../../components/blogs/BlogCard";
-import BlogsNav from "../../../components/blogs/BlogsNav";
-import Pagination from "../../../components/Pagination";
-import Seo from "../../../components/Seo";
-import { HeadH2 } from "../../../components/style/Common";
+import { BlogCard } from '../../../components/blogs/BlogCard'
+import BlogsNav from '../../../components/blogs/BlogsNav'
+import Pagination from '../../../components/Pagination'
+import Seo from '../../../components/Seo'
+import { HeadH2 } from '../../../components/style/Common'
 
 type Note = {
-  id: Number;
-  noteUrl: string;
-  name: string;
-  eyecatch: string;
-  publishAt: string;
-};
+  id: Number
+  noteUrl: string
+  name: string
+  eyecatch: string
+  publishAt: string
+}
 type Props = {
-  staticNotes: Note[];
-  isLastPage: boolean;
-};
+  staticNotes: Note[]
+  isLastPage: boolean
+}
 
 const noteGetUrl =
-  "https://note.com/api/v2/creators/niihara_megumu/contents?kind=note";
+  'https://note.com/api/v2/creators/niihara_megumu/contents?kind=note'
 const fetchNotes = async (pageId: string | string[] | undefined) => {
-  const res = await fetch(`${noteGetUrl}&page=${pageId}`);
-  const result = await res.json();
-  const isLastPage: boolean = result.data.isLastPage;
+  const res = await fetch(`${noteGetUrl}&page=${pageId}`)
+  const result = await res.json()
+  const isLastPage: boolean = result.data.isLastPage
   const notes: Note[] = result.data.contents.map((note: Note) => {
     return {
       id: note.id,
       noteUrl: note.noteUrl,
       name: note.name,
       eyecatch: note.eyecatch,
-      publishAt: note.publishAt,
-    };
-  });
-  return { notes, isLastPage };
-};
+      publishAt: note.publishAt
+    }
+  })
+  return { notes, isLastPage }
+}
 
 const calcPageCount = async () => {
-  const maxNumPerPage: number = 6;
-  const res = await fetch(noteGetUrl);
-  const result = await res.json();
-  const allNotesCount: number = result.data.totalCount;
-  return (allNotesCount % maxNumPerPage) + 1;
-};
+  const maxNumPerPage: number = 6
+  const res = await fetch(noteGetUrl)
+  const result = await res.json()
+  const allNotesCount: number = result.data.totalCount
+  return (allNotesCount % maxNumPerPage) + 1
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const pageCount = await calcPageCount();
-  const paths = [];
+  const pageCount = await calcPageCount()
+  const paths = []
   for (let i = 1; i <= pageCount; i++) {
-    paths.push({ params: { id: String(i) } });
+    paths.push({ params: { id: String(i) } })
   }
-  return { paths, fallback: false };
-};
+  return { paths, fallback: false }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { notes, isLastPage } = await fetchNotes(params?.id);
+  const { notes, isLastPage } = await fetchNotes(params?.id)
   return {
     props: { staticNotes: notes, isLastPage },
-    revalidate: 60,
-  };
-};
+    revalidate: 60
+  }
+}
 
-const BlogsNotes: VFC<Props> = (props) => {
-  const { staticNotes, isLastPage } = props;
-  const router = useRouter();
-  const currentPagination = Number(router.asPath.split("/").pop());
+const BlogsNotes: VFC<Props> = props => {
+  const { staticNotes, isLastPage } = props
+  const router = useRouter()
+  const currentPagination = Number(router.asPath.split('/').pop())
 
   return (
     <>
@@ -86,12 +86,12 @@ const BlogsNotes: VFC<Props> = (props) => {
       <BlogsNav />
       <Grid
         templateColumns={{
-          base: "1fr",
-          md: "repeat(2, 1fr)",
+          base: '1fr',
+          md: 'repeat(2, 1fr)'
         }}
         gap={6}
       >
-        {staticNotes?.map((note) => (
+        {staticNotes?.map(note => (
           <GridItem
             key={String(note.id)}
             bg="gray.300"
@@ -113,7 +113,7 @@ const BlogsNotes: VFC<Props> = (props) => {
         isLastPage={isLastPage}
       />
     </>
-  );
-};
+  )
+}
 
-export default BlogsNotes;
+export default BlogsNotes
