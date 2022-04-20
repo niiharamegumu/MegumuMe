@@ -1,9 +1,9 @@
-import React, { VFC } from "react";
-import { Box, Text } from "@chakra-ui/react";
-import { FcDocument } from "react-icons/fc";
+import React, { VFC } from 'react'
+import { Box, Text } from '@chakra-ui/react'
+import { FcDocument } from 'react-icons/fc'
 
-import Seo from "../../components/Seo";
-import { HeadH2, HeadH3 } from "../../components/style/Common";
+import Seo from '../../components/Seo'
+import { HeadH2, HeadH3 } from '../../components/style/Common'
 
 const Privacy: VFC = () => {
   return (
@@ -54,7 +54,7 @@ const Privacy: VFC = () => {
         </Text>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Privacy;
+export default Privacy

@@ -1,21 +1,21 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme } from '@chakra-ui/react'
 
 export const darkTheme = extendTheme({
   components: {
     Link: {
       baseStyle: {
         _focus: {
-          boxShadow: "none",
-        },
-      },
-    },
+          boxShadow: 'none'
+        }
+      }
+    }
   },
   styles: {
     global: {
       body: {
-        bg: "gray.900",
-        color: "white",
-      },
-    },
-  },
-});
+        bg: 'gray.900',
+        color: 'white'
+      }
+    }
+  }
+})

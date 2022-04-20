@@ -1,19 +1,19 @@
-import { VFC } from "react";
+import { VFC } from 'react'
 import {
   AccordionButton,
   AccordionItem,
   AccordionPanel,
-  Box,
-} from "@chakra-ui/react";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+  Box
+} from '@chakra-ui/react'
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
 
 type Props = {
-  title: string;
-  children: React.ReactNode;
-};
+  title: string
+  children: React.ReactNode
+}
 
-export const AccordionContent: VFC<Props> = (props) => {
-  const { title, children } = props;
+export const AccordionContent: VFC<Props> = props => {
+  const { title, children } = props
   return (
     <AccordionItem border="none" mb={2}>
       {({ isExpanded }) => (
@@ -23,8 +23,8 @@ export const AccordionContent: VFC<Props> = (props) => {
               bg="gray.700"
               borderTopRadius={10}
               borderBottomRadius={isExpanded ? 0 : 10}
-              _focus={{ boxShadow: "none" }}
-              _hover={{ bg: "gray.700" }}
+              _focus={{ boxShadow: 'none' }}
+              _hover={{ bg: 'gray.700' }}
             >
               <Box flex="1" textAlign="left" py={2}>
                 {title}
@@ -47,5 +47,5 @@ export const AccordionContent: VFC<Props> = (props) => {
         </>
       )}
     </AccordionItem>
-  );
-};
+  )
+}

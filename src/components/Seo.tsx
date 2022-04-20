@@ -1,14 +1,14 @@
-import { VFC } from "react";
-import Head from "next/head";
+import { VFC } from 'react'
+import Head from 'next/head'
 
 type MetaData = {
-  pageTitle?: string;
-  pageDescription?: string;
-  pagePath?: string;
-  pageImg?: string;
-  pageImgWidth?: number;
-  pageImgHeight?: number;
-};
+  pageTitle?: string
+  pageDescription?: string
+  pagePath?: string
+  pageImg?: string
+  pageImgWidth?: number
+  pageImgHeight?: number
+}
 
 const Seo: VFC<MetaData> = ({
   pageTitle,
@@ -16,17 +16,17 @@ const Seo: VFC<MetaData> = ({
   pagePath,
   pageImg,
   pageImgWidth,
-  pageImgHeight,
+  pageImgHeight
 }) => {
-  const defaultTitle = "megumu.me";
-  const defaultDescription = "megumu.me";
+  const defaultTitle = 'megumu.me'
+  const defaultDescription = 'megumu.me'
 
-  const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle;
-  const description = pageDescription ? pageDescription : defaultDescription;
-  const url = pagePath;
-  const imgUrl = pageImg;
-  const imgWidth = pageImgWidth ? pageImgWidth : 1280;
-  const imgHeight = pageImgHeight ? pageImgHeight : 640;
+  const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle
+  const description = pageDescription ? pageDescription : defaultDescription
+  const url = pagePath
+  const imgUrl = pageImg
+  const imgWidth = pageImgWidth ? pageImgWidth : 1280
+  const imgHeight = pageImgHeight ? pageImgHeight : 640
 
   return (
     <Head>
@@ -50,7 +50,7 @@ const Seo: VFC<MetaData> = ({
         href="https://megumu.me/favicon.ico"
       ></link>
     </Head>
-  );
-};
+  )
+}
 
-export default Seo;
+export default Seo

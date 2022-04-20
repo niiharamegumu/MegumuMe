@@ -1,47 +1,47 @@
-import { GetStaticProps } from "next";
-import { useEffect, VFC } from "react";
-import useSWR from "swr";
-import { FcServices } from "react-icons/fc";
+import { GetStaticProps } from 'next'
+import { useEffect, VFC } from 'react'
+import useSWR from 'swr'
+import { FcServices } from 'react-icons/fc'
 
-import Seo from "../components/Seo";
-import { clientProducts } from "../libs/microCMS/client";
-import { ProductType } from "../types/product";
-import { Grid, GridItem } from "@chakra-ui/react";
-import { ProductCard } from "../components/product/ProductCard";
-import { HeadH2 } from "../components/style/Common";
+import Seo from '../components/Seo'
+import { clientProducts } from '../libs/microCMS/client'
+import { ProductType } from '../types/product'
+import { Grid, GridItem } from '@chakra-ui/react'
+import { ProductCard } from '../components/product/ProductCard'
+import { HeadH2 } from '../components/style/Common'
 
 type Props = {
-  staticProducts: ProductType[];
-};
+  staticProducts: ProductType[]
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await clientProducts.get({ endpoint: "products" });
+  const data = await clientProducts.get({ endpoint: 'products' })
   return {
     props: {
-      staticProducts: data.contents,
+      staticProducts: data.contents
     },
-    revalidate: 30,
-  };
-};
+    revalidate: 30
+  }
+}
 
-const ProductsList: VFC<Props> = (props) => {
-  const { staticProducts } = props;
+const ProductsList: VFC<Props> = props => {
+  const { staticProducts } = props
   const fetcher = () =>
-    clientProducts.get({ endpoint: "products" }).then((data) => data.contents);
+    clientProducts.get({ endpoint: 'products' }).then(data => data.contents)
   const {
     data: products,
     error,
-    mutate,
-  } = useSWR<ProductType[]>("products", fetcher, {
-    fallbackData: staticProducts,
-  });
+    mutate
+  } = useSWR<ProductType[]>('products', fetcher, {
+    fallbackData: staticProducts
+  })
 
   useEffect(() => {
-    mutate();
-  }, [mutate]);
+    mutate()
+  }, [mutate])
 
   if (error) {
-    return <div>failed to load.</div>;
+    return <div>failed to load.</div>
   }
 
   return (
@@ -57,8 +57,8 @@ const ProductsList: VFC<Props> = (props) => {
         <FcServices />
         products
       </HeadH2>
-      <Grid templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }} gap={6}>
-        {products?.map((product) => (
+      <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} gap={6}>
+        {products?.map(product => (
           <GridItem
             key={product.id}
             bg="gray.300"
@@ -70,6 +70,6 @@ const ProductsList: VFC<Props> = (props) => {
         ))}
       </Grid>
     </>
-  );
-};
-export default ProductsList;
+  )
+}
+export default ProductsList

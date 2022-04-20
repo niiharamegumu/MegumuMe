@@ -1,3 +1,3 @@
-import Page from ".";
+import Page from '.'
 
-export default Page;
+export default Page

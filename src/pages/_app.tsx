@@ -1,14 +1,14 @@
-import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+import type { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react'
 
-import { Layout } from "../components/Layout";
-import { darkTheme } from "../theme/theme";
-import GoogleAnalytics from "../components/GoogleAnalytics";
-import usePageView from "../hooks/usePageView";
-import Head from "next/head";
+import { Layout } from '../components/Layout'
+import { darkTheme } from '../theme/theme'
+import GoogleAnalytics from '../components/GoogleAnalytics'
+import usePageView from '../hooks/usePageView'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  usePageView();
+  usePageView()
   return (
     <>
       <Head>
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Layout>
       </ChakraProvider>
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

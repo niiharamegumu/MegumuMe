@@ -1,5 +1,5 @@
-import { VFC } from "react";
-import { Box, Text, Flex, Link } from "@chakra-ui/react";
+import { VFC } from 'react'
+import { Box, Text, Flex, Link } from '@chakra-ui/react'
 
 export const Footer: VFC = () => {
   return (
@@ -11,12 +11,12 @@ export const Footer: VFC = () => {
       // display={{ base: "none", lg: "block" }}
       textAlign="center"
       py={4}
-      pb={{ base: "108px", lg: 4 }}
+      pb={{ base: '108px', lg: 4 }}
     >
       <Flex
         as="nav"
         fontSize="sm"
-        flexDirection={{ base: "row", lg: "column" }}
+        flexDirection={{ base: 'row', lg: 'column' }}
         justifyContent="center"
         alignItems="center"
         gap={2}
@@ -25,5 +25,5 @@ export const Footer: VFC = () => {
         <Text as="small">&copy; 2022 by niihara megumu.</Text>
       </Flex>
     </Box>
-  );
-};
+  )
+}

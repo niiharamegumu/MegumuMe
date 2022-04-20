@@ -1,48 +1,48 @@
-import { useEffect, VFC } from "react";
-import { GetStaticProps } from "next";
-import { Grid, GridItem } from "@chakra-ui/react";
-import useSWR from "swr";
-import { FcReading } from "react-icons/fc";
+import { useEffect, VFC } from 'react'
+import { GetStaticProps } from 'next'
+import { Grid, GridItem } from '@chakra-ui/react'
+import useSWR from 'swr'
+import { FcReading } from 'react-icons/fc'
 
-import Seo from "../../components/Seo";
-import { BlogCard } from "../../components/blogs/BlogCard";
-import { HeadH2 } from "../../components/style/Common";
-import { clientBlogs } from "../../libs/microCMS/client";
-import { BlogType } from "../../types/blog";
-import BlogsNav from "../../components/blogs/BlogsNav";
+import Seo from '../../components/Seo'
+import { BlogCard } from '../../components/blogs/BlogCard'
+import { HeadH2 } from '../../components/style/Common'
+import { clientBlogs } from '../../libs/microCMS/client'
+import { BlogType } from '../../types/blog'
+import BlogsNav from '../../components/blogs/BlogsNav'
 
 type Props = {
-  staticBlogs: BlogType[];
-};
+  staticBlogs: BlogType[]
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await clientBlogs.get({ endpoint: "blogs" });
+  const data = await clientBlogs.get({ endpoint: 'blogs' })
   return {
     props: {
-      staticBlogs: data.contents,
+      staticBlogs: data.contents
     },
-    revalidate: 30,
-  };
-};
+    revalidate: 30
+  }
+}
 
-export const Blogs: VFC<Props> = (props) => {
-  const { staticBlogs } = props;
+export const Blogs: VFC<Props> = props => {
+  const { staticBlogs } = props
   const fetcher = () =>
-    clientBlogs.get({ endpoint: "blogs" }).then((data) => data.contents);
+    clientBlogs.get({ endpoint: 'blogs' }).then(data => data.contents)
   const {
     data: blogs,
     error,
-    mutate,
-  } = useSWR<BlogType[]>("blogs", fetcher, {
-    fallbackData: staticBlogs,
-  });
+    mutate
+  } = useSWR<BlogType[]>('blogs', fetcher, {
+    fallbackData: staticBlogs
+  })
 
   useEffect(() => {
-    mutate();
-  }, [mutate]);
+    mutate()
+  }, [mutate])
 
   if (error) {
-    return <div>failed to load.</div>;
+    return <div>failed to load.</div>
   }
 
   return (
@@ -61,12 +61,12 @@ export const Blogs: VFC<Props> = (props) => {
       <BlogsNav />
       <Grid
         templateColumns={{
-          base: "1fr",
-          md: "repeat(2, 1fr)",
+          base: '1fr',
+          md: 'repeat(2, 1fr)'
         }}
         gap={6}
       >
-        {blogs?.map((blog) => (
+        {blogs?.map(blog => (
           <GridItem
             key={blog.id}
             bg="gray.300"
@@ -83,6 +83,6 @@ export const Blogs: VFC<Props> = (props) => {
         ))}
       </Grid>
     </>
-  );
-};
-export default Blogs;
+  )
+}
+export default Blogs
