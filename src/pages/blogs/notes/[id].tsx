@@ -45,7 +45,9 @@ const calcPageCount = async () => {
   const res = await fetch(noteGetUrl)
   const result = await res.json()
   const allNotesCount: number = result.data.totalCount
-  return Math.floor(allNotesCount / maxNumPerPage)
+  return allNotesCount % maxNumPerPage === 0
+    ? allNotesCount / maxNumPerPage
+    : Math.floor(allNotesCount / maxNumPerPage) + 1
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
