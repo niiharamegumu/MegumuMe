@@ -1,7 +1,7 @@
 import { useEffect, VFC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { Spinner } from '@chakra-ui/react'
+import { Box, Link, Spinner } from '@chakra-ui/react'
 import useSWR from 'swr'
 import cheerio, { CheerioAPI } from 'cheerio'
 import hljs from 'highlight.js'
@@ -90,6 +90,22 @@ const Post: VFC<Props> = props => {
       />
 
       <BlogDetail blog={blog} />
+      <Box mt={6}>
+        <Link
+          href="/blogs/"
+          color="gray.900"
+          display={{ base: 'block', lg: 'inline-block' }}
+          textAlign="center"
+          bg="gray.300"
+          borderRadius={6}
+          p=".6em 1em"
+          fontSize="sm"
+          fontWeight="bold"
+          _hover={{ border: 'none', bg: 'blue.600', color: 'gray.100' }}
+        >
+          一覧に戻る
+        </Link>
+      </Box>
     </>
   )
 }

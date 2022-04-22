@@ -41,20 +41,6 @@ export const BlogDetail: VFC<Props> = memo(props => {
         {blog.tags &&
           blog.tags.map(tag => <TagButton key={tag.id} tag={tag.tagName} />)}
         <BlogDetailBody body={blog.body} />
-        <Link
-          href="/blogs/"
-          display="block"
-          color="gray.300"
-          bg="gray.900"
-          textAlign="center"
-          py={4}
-          borderRadius={10}
-          fontSize="xl"
-          fontWeight="bold"
-          _hover={{ border: 'none' }}
-        >
-          Blog一覧へ
-        </Link>
       </Box>
     </Box>
   )
