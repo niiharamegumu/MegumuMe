@@ -67,10 +67,10 @@ export const Blogs: VFC<Props> = props => {
         }}
         gap={6}
       >
-        {blogs?.map((blog, index) => (
+        {blogs?.map(blog => (
           <VisibilitySection
             key={blog.id}
-            delay={0.15 * (index + 1)}
+            delay={0.15}
             chakraProps={{
               bg: 'gray.300',
               borderRadius: 10,

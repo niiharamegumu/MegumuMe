@@ -1,5 +1,5 @@
 import React, { memo, VFC } from 'react'
-import { Box, Flex, Heading, Image, Link, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
 import { BlogType } from '../../types/blog'
@@ -15,30 +15,25 @@ const imageOption = '?fm=webp&w=200&q=40&dpr=5'
 export const BlogDetail: VFC<Props> = memo(props => {
   const { blog } = props
   return (
-    <Box color="gray.900" borderRadius={10} overflow="hidden">
-      <VisibilitySection delay={0.4}>
-        <Flex>
-          <Image
-            src={`${blog.mainImage.url}${imageOption}`}
-            alt={blog.title}
-            objectFit="cover"
-            w="100%"
-            h={{ base: '180px', sm: '300px', md: '400px' }}
-          />
-        </Flex>
-      </VisibilitySection>
+    <VisibilitySection
+      delay={0.4}
+      chakraProps={{
+        color: 'gray.900',
+        borderRadius: 10,
+        overflow: 'hidden'
+      }}
+    >
+      <Flex>
+        <Image
+          src={`${blog.mainImage.url}${imageOption}`}
+          alt={blog.title}
+          objectFit="cover"
+          w="100%"
+          h={{ base: '180px', sm: '300px', md: '400px' }}
+        />
+      </Flex>
 
-      <VisibilitySection
-        delay={0.4}
-        chakraProps={{
-          bg: 'gray.300',
-          px: {
-            base: 4,
-            lg: 20
-          },
-          py: 14
-        }}
-      >
+      <Box bg="gray.300" px={{ base: 4, lg: 20 }} py={14}>
         <Heading
           as="h1"
           fontSize={{ base: '2xl', sm: '4xl' }}
@@ -54,7 +49,7 @@ export const BlogDetail: VFC<Props> = memo(props => {
         {blog.tags &&
           blog.tags.map(tag => <TagButton key={tag.id} tag={tag.tagName} />)}
         <BlogDetailBody body={blog.body} />
-      </VisibilitySection>
-    </Box>
+      </Box>
+    </VisibilitySection>
   )
 })
