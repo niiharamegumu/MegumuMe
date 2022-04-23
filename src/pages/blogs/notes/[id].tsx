@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, Spinner } from '@chakra-ui/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { VFC } from 'react'
@@ -57,7 +57,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (let i = 1; i <= pageCount; i++) {
     paths.push({ params: { id: String(i) } })
   }
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -72,6 +72,10 @@ const BlogsNotes: VFC<Props> = props => {
   const { staticNotes, isLastPage } = props
   const router = useRouter()
   const currentPagination = Number(router.asPath.split('/').pop())
+
+  if (router.isFallback) {
+    return <Spinner />
+  }
 
   return (
     <>
