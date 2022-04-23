@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, Spinner } from '@chakra-ui/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { VFC } from 'react'
@@ -74,7 +74,7 @@ const BlogsNotes: VFC<Props> = props => {
   const currentPagination = Number(router.asPath.split('/').pop())
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   return (
