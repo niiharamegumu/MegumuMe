@@ -57,7 +57,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (let i = 1; i <= pageCount; i++) {
     paths.push({ params: { id: String(i) } })
   }
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -72,6 +72,10 @@ const BlogsNotes: VFC<Props> = props => {
   const { staticNotes, isLastPage } = props
   const router = useRouter()
   const currentPagination = Number(router.asPath.split('/').pop())
+
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
