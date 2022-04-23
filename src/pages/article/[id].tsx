@@ -11,6 +11,7 @@ import Seo from '../../components/Seo'
 import { BlogDetail } from '../../components/blogs/BlogDetail'
 import { clientBlogs } from '../../libs/microCMS/client'
 import { BlogType } from '../../types/blog'
+import VisibilitySection from '../../components/VisibilitySection'
 
 type Props = {
   staticBlog: BlogType
@@ -90,7 +91,7 @@ const Post: VFC<Props> = props => {
       />
 
       <BlogDetail blog={blog} />
-      <Box mt={6}>
+      <VisibilitySection delay={1} chakraProps={{ mt: 6 }}>
         <Link
           href="/blogs/"
           color="gray.900"
@@ -105,7 +106,7 @@ const Post: VFC<Props> = props => {
         >
           一覧に戻る
         </Link>
-      </Box>
+      </VisibilitySection>
     </>
   )
 }

@@ -4,6 +4,7 @@ import { FcDocument } from 'react-icons/fc'
 
 import Seo from '../../components/Seo'
 import { HeadH2, HeadH3 } from '../../components/style/Common'
+import VisibilitySection from '../../components/VisibilitySection'
 
 const Privacy: VFC = () => {
   return (
@@ -19,12 +20,14 @@ const Privacy: VFC = () => {
         <FcDocument />
         privacy policy
       </HeadH2>
-      <Box
-        as="section"
-        bg="gray.300"
-        color="gray.900"
-        borderRadius={10}
-        p={{ base: 4, md: 6 }}
+      <VisibilitySection
+        delay={0.4}
+        chakraProps={{
+          bg: 'gray.300',
+          color: 'gray.900',
+          borderRadius: 10,
+          p: { base: 4, md: 6 }
+        }}
       >
         <HeadH3>個人情報の利用目的</HeadH3>
         <Text as="p">
@@ -52,7 +55,7 @@ const Privacy: VFC = () => {
           <br />
           ただし、インラインフレームの使用や画像の直リンクはご遠慮ください。
         </Text>
-      </Box>
+      </VisibilitySection>
     </>
   )
 }
