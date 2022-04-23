@@ -29,7 +29,7 @@ export const BlogDetail: VFC<Props> = memo(props => {
       </VisibilitySection>
 
       <VisibilitySection
-        delay={1}
+        delay={0.4}
         chakraProps={{
           bg: 'gray.300',
           px: {
