@@ -9,6 +9,7 @@ import { ProductType } from '../types/product'
 import { Grid, GridItem } from '@chakra-ui/react'
 import { ProductCard } from '../components/product/ProductCard'
 import { HeadH2 } from '../components/style/Common'
+import VisibilitySection from '../components/VisibilitySection'
 
 type Props = {
   staticProducts: ProductType[]
@@ -58,15 +59,19 @@ const ProductsList: VFC<Props> = props => {
         products
       </HeadH2>
       <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} gap={6}>
-        {products?.map(product => (
-          <GridItem
+        {products?.map((product, index) => (
+          <VisibilitySection
+            delay={0.2 * (index + 1)}
             key={product.id}
-            bg="gray.300"
-            borderRadius={10}
-            overflow="hidden"
+            chakraProps={{
+              mb: 0,
+              bg: 'gray.300',
+              borderRadius: 10,
+              overflow: 'hidden'
+            }}
           >
             <ProductCard product={product} />
-          </GridItem>
+          </VisibilitySection>
         ))}
       </Grid>
     </>

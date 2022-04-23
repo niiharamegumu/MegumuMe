@@ -16,6 +16,7 @@ import { FcFeedback } from 'react-icons/fc'
 import Seo from '../../components/Seo'
 import { HeadH2 } from '../../components/style/Common'
 import ContactType from '../../types/contact'
+import VisibilitySection from '../../components/VisibilitySection'
 
 const schema = yup
   .object({
@@ -82,70 +83,72 @@ const Contact: VFC = () => {
         <FcFeedback />
         contact
       </HeadH2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={!!errors.name}>
-          <FormLabel htmlFor="name">名前</FormLabel>
-          <Input
-            id="name"
-            placeholder="新原 めぐむ"
-            {...register('name')}
-            color="gray.900"
-            bg="gray.200"
-            _placeholder={{ color: 'gray.500' }}
-          />
-          {errors.name && (
-            <FormErrorMessage>{errors.name.message}</FormErrorMessage>
-          )}
-          <FormControl isInvalid={!!errors.mail}>
-            <FormLabel htmlFor="mail" mt={4}>
-              メールアドレス
-            </FormLabel>
+      <VisibilitySection delay={0.4}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <FormControl isInvalid={!!errors.name}>
+            <FormLabel htmlFor="name">名前</FormLabel>
             <Input
-              id="mail"
-              placeholder="info@example.com"
-              {...register('mail')}
+              id="name"
+              placeholder="新原 めぐむ"
+              {...register('name')}
               color="gray.900"
               bg="gray.200"
               _placeholder={{ color: 'gray.500' }}
             />
-            {errors.mail && (
-              <FormErrorMessage>{errors.mail.message}</FormErrorMessage>
+            {errors.name && (
+              <FormErrorMessage>{errors.name.message}</FormErrorMessage>
             )}
+            <FormControl isInvalid={!!errors.mail}>
+              <FormLabel htmlFor="mail" mt={4}>
+                メールアドレス
+              </FormLabel>
+              <Input
+                id="mail"
+                placeholder="info@example.com"
+                {...register('mail')}
+                color="gray.900"
+                bg="gray.200"
+                _placeholder={{ color: 'gray.500' }}
+              />
+              {errors.mail && (
+                <FormErrorMessage>{errors.mail.message}</FormErrorMessage>
+              )}
+            </FormControl>
+            <FormControl isInvalid={!!errors.body}>
+              <FormLabel htmlFor="body" mt={4}>
+                お問い合わせ内容
+              </FormLabel>
+              <Textarea
+                id="body"
+                placeholder="お問い合わせ内容をご記入ください。"
+                {...register('body')}
+                h="30vh"
+                color="gray.900"
+                bg="gray.200"
+                _placeholder={{ color: 'gray.500' }}
+              />
+              {errors.body && (
+                <FormErrorMessage>{errors.body.message}</FormErrorMessage>
+              )}
+            </FormControl>
           </FormControl>
-          <FormControl isInvalid={!!errors.body}>
-            <FormLabel htmlFor="body" mt={4}>
-              お問い合わせ内容
-            </FormLabel>
-            <Textarea
-              id="body"
-              placeholder="お問い合わせ内容をご記入ください。"
-              {...register('body')}
-              h="30vh"
-              color="gray.900"
-              bg="gray.200"
-              _placeholder={{ color: 'gray.500' }}
-            />
-            {errors.body && (
-              <FormErrorMessage>{errors.body.message}</FormErrorMessage>
-            )}
-          </FormControl>
-        </FormControl>
-        <Button
-          mt={{ base: 6, md: 4 }}
-          w={{ base: '100%', md: 'auto' }}
-          bg="gray.300"
-          color="gray.900"
-          fontWeight="bold"
-          _hover={{
-            bg: 'blue.600',
-            color: 'gray.100'
-          }}
-          isLoading={isSubmitting}
-          type="submit"
-        >
-          送信する
-        </Button>
-      </form>
+          <Button
+            mt={{ base: 6, md: 4 }}
+            w={{ base: '100%', md: 'auto' }}
+            bg="gray.300"
+            color="gray.900"
+            fontWeight="bold"
+            _hover={{
+              bg: 'blue.600',
+              color: 'gray.100'
+            }}
+            isLoading={isSubmitting}
+            type="submit"
+          >
+            送信する
+          </Button>
+        </form>
+      </VisibilitySection>
     </>
   )
 }

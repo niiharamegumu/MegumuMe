@@ -25,6 +25,7 @@ import {
 import Seo from '../components/Seo'
 import { HeadH2, HeadH3 } from '../components/style/Common'
 import { AccordionContent } from '../components/AccordionContent'
+import VisibilitySection from '../components/VisibilitySection'
 
 const Home: NextPage = () => {
   return (
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
         pageImgWidth={1280}
         pageImgHeight={640}
       />
-      <Box as="section" mb={10}>
+      <VisibilitySection delay={0.4} chakraProps={{ mb: 10 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcIdea />
           about
@@ -63,9 +64,9 @@ const Home: NextPage = () => {
             宮崎でずっと生きていく手段を模索中・・・
           </Text>
         </Box>
-      </Box>
+      </VisibilitySection>
 
-      <Box as="section" mb={10}>
+      <VisibilitySection delay={0.6} chakraProps={{ mb: 10 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcCommandLine />
           Skills
@@ -256,9 +257,9 @@ const Home: NextPage = () => {
             </Flex>
           </GridItem>
         </Grid>
-      </Box>
+      </VisibilitySection>
 
-      <Box as="section">
+      <VisibilitySection delay={0.8} chakraProps={{ mb: 0 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcBusinessman />
           Career
@@ -310,7 +311,7 @@ const Home: NextPage = () => {
             基本的なWebページを作成しながら傍らWeb系企業の就職活動を開始。
           </AccordionContent>
         </Accordion>
-      </Box>
+      </VisibilitySection>
     </>
   )
 }

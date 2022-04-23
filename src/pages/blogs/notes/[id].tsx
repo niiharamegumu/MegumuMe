@@ -9,6 +9,7 @@ import BlogsNav from '../../../components/blogs/BlogsNav'
 import Pagination from '../../../components/Pagination'
 import Seo from '../../../components/Seo'
 import { HeadH2 } from '../../../components/style/Common'
+import VisibilitySection from '../../../components/VisibilitySection'
 
 type Note = {
   id: Number
@@ -93,12 +94,15 @@ const BlogsNotes: VFC<Props> = props => {
         }}
         gap={6}
       >
-        {staticNotes?.map(note => (
-          <GridItem
+        {staticNotes?.map((note, index) => (
+          <VisibilitySection
             key={String(note.id)}
-            bg="gray.300"
-            borderRadius={10}
-            overflow="hidden"
+            delay={0.125 * (index + 1)}
+            chakraProps={{
+              bg: 'gray.300',
+              borderRadius: 10,
+              overflow: 'hidden'
+            }}
           >
             <BlogCard
               link={note.noteUrl}
@@ -106,14 +110,16 @@ const BlogsNotes: VFC<Props> = props => {
               createdAt={note.publishAt}
               isBlank={true}
             />
-          </GridItem>
+          </VisibilitySection>
         ))}
       </Grid>
-      <Pagination
-        currentPagination={currentPagination}
-        pagePath="/blogs/notes/"
-        isLastPage={isLastPage}
-      />
+      <VisibilitySection delay={0.125 * 7}>
+        <Pagination
+          currentPagination={currentPagination}
+          pagePath="/blogs/notes/"
+          isLastPage={isLastPage}
+        />
+      </VisibilitySection>
     </>
   )
 }

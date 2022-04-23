@@ -10,6 +10,7 @@ import { HeadH2 } from '../../components/style/Common'
 import { clientBlogs } from '../../libs/microCMS/client'
 import { BlogType } from '../../types/blog'
 import BlogsNav from '../../components/blogs/BlogsNav'
+import VisibilitySection from '../../components/VisibilitySection'
 
 type Props = {
   staticBlogs: BlogType[]
@@ -66,12 +67,15 @@ export const Blogs: VFC<Props> = props => {
         }}
         gap={6}
       >
-        {blogs?.map(blog => (
-          <GridItem
+        {blogs?.map((blog, index) => (
+          <VisibilitySection
             key={blog.id}
-            bg="gray.300"
-            borderRadius={10}
-            overflow="hidden"
+            delay={0.15 * (index + 1)}
+            chakraProps={{
+              bg: 'gray.300',
+              borderRadius: 10,
+              overflow: 'hidden'
+            }}
           >
             <BlogCard
               link={`/article/${blog.id}`}
@@ -79,7 +83,7 @@ export const Blogs: VFC<Props> = props => {
               createdAt={blog.createdAt}
               tags={blog.tags}
             />
-          </GridItem>
+          </VisibilitySection>
         ))}
       </Grid>
     </>

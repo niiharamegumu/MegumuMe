@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
+import { AnimatePresence } from 'framer-motion'
 
 import { Layout } from '../components/Layout'
 import { darkTheme } from '../theme/theme'
@@ -7,7 +8,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics'
 import usePageView from '../hooks/usePageView'
 import Head from 'next/head'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
     <>
@@ -23,9 +24,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GoogleAnalytics />
       <ChakraProvider theme={darkTheme} resetCSS>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Layout>
+            <Component key={router.asPath} {...pageProps} />
+          </Layout>
+        </AnimatePresence>
       </ChakraProvider>
     </>
   )
