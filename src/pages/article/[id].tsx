@@ -91,7 +91,7 @@ const Post: VFC<Props> = props => {
       />
 
       <BlogDetail blog={blog} />
-      <VisibilitySection delay={1} chakraProps={{ mt: 6 }}>
+      <VisibilitySection delay={0.4} chakraProps={{ mt: 6 }}>
         <Link
           href="/blogs/"
           color="gray.900"

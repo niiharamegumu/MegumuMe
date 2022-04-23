@@ -94,10 +94,10 @@ const BlogsNotes: VFC<Props> = props => {
         }}
         gap={6}
       >
-        {staticNotes?.map((note, index) => (
+        {staticNotes?.map(note => (
           <VisibilitySection
             key={String(note.id)}
-            delay={0.125 * (index + 1)}
+            delay={0.15}
             chakraProps={{
               bg: 'gray.300',
               borderRadius: 10,
@@ -113,7 +113,7 @@ const BlogsNotes: VFC<Props> = props => {
           </VisibilitySection>
         ))}
       </Grid>
-      <VisibilitySection delay={0.125 * 7}>
+      <VisibilitySection delay={0.15}>
         <Pagination
           currentPagination={currentPagination}
           pagePath="/blogs/notes/"
