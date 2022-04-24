@@ -59,9 +59,9 @@ const ProductsList: VFC<Props> = props => {
         products
       </HeadH2>
       <Grid templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }} gap={6}>
-        {products?.map((product, index) => (
+        {products?.map(product => (
           <VisibilitySection
-            delay={0.2 * (index + 1)}
+            delay={0.15}
             key={product.id}
             chakraProps={{
               mb: 0,
