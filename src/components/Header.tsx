@@ -28,16 +28,17 @@ export const Header: VFC = () => {
         >
           MgM
           <ChakraMotion
-            initial={{ scaleX: 0, scaleY: 0 }}
+            initial={{ scaleX: 1, scaleY: 0.1 }}
             animate={{
-              scaleX: [1, 1, 1, 1, 1.2, 1.2],
-              scaleY: [0.1, 0.1, 0.1, 0.1, 1, 1]
+              scaleX: [1, 1, 1, 1.2, 1],
+              scaleY: [0.1, 0.1, 0.1, 1, 1]
             }}
             // @ts-ignore no problem in operation, although type error appears.
             transition={{
-              duration: 10,
-              repeat: Infinity,
-              repeatType: 'mirror'
+              duration: 1,
+              delay: 0.2,
+              repeat: 2,
+              repeatType: 'reverse'
             }}
           >
             <FaKeyboard />
