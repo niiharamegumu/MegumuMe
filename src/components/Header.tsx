@@ -1,7 +1,14 @@
 import { VFC } from 'react'
 import Link from 'next/link'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, chakra, Flex, shouldForwardProp } from '@chakra-ui/react'
 import { FaKeyboard } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+
+const ChakraMotion = chakra(motion.div, {
+  shouldForwardProp: prop => {
+    return shouldForwardProp(prop) || prop === 'transition'
+  }
+})
 
 export const Header: VFC = () => {
   return (
@@ -20,7 +27,21 @@ export const Header: VFC = () => {
           flexDirection="column"
         >
           MgM
-          <FaKeyboard />
+          <ChakraMotion
+            initial={{ scaleX: 0, scaleY: 0 }}
+            animate={{
+              scaleX: [1, 1, 1, 1, 1.2, 1.2],
+              scaleY: [0.1, 0.1, 0.1, 0.1, 1, 1]
+            }}
+            // @ts-ignore no problem in operation, although type error appears.
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: 'mirror'
+            }}
+          >
+            <FaKeyboard />
+          </ChakraMotion>
         </Flex>
       </Link>
     </Box>
