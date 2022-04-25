@@ -19,14 +19,9 @@ const VisibilitySection: VFC<Props> = props => {
   return (
     <ChakraBox
       {...chakraProps}
-      initial={{ opacity: 0, scaleX: 0, scaleY: 0 }}
-      animate={{
-        x: ['-50%', '-50%', '-50%', '-50%', '0%'],
-        opacity: 1,
-        scaleX: [0.0002, 0.0002, 0.0002, 0.0002, 1],
-        scaleY: [1, 0.1, 1, 1, 1]
-      }}
-      exit={{ opacity: 0, x: -200 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: [0, 1, 1], y: 0 }}
+      exit={{ opacity: 0, y: 100 }}
       // @ts-ignore no problem in operation, although type error appears.
       transition={{
         duration: 0.8,
