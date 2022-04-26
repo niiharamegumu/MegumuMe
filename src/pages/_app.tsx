@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico" />
         <link
           rel="apple-touch-icon"
-          sizes="192x192"
-          href="./icon-192x192.png"
+          sizes="180x180"
+          href="./icon-180x180.png"
         />
       </Head>
       <GoogleAnalytics />
