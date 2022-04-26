@@ -1,7 +1,6 @@
 import { VFC } from 'react'
 import Link from 'next/link'
 import { Box, chakra, Flex, shouldForwardProp } from '@chakra-ui/react'
-import { FaKeyboard } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const ChakraMotion = chakra(motion.div, {
@@ -15,33 +14,29 @@ export const Header: VFC = () => {
     <Box as="header" pt={8}>
       <Link href="/" passHref>
         <Flex
+          bgGradient="linear(to-br, #6139FD, #974FFE, #C260FE)"
           cursor="pointer"
-          bg="white"
           w="60px"
           h="60px"
           borderRadius="50%"
-          color="gray.900"
+          color="white"
           justify="center"
           alignItems="center"
           fontWeight="bold"
           flexDirection="column"
         >
-          MgM
           <ChakraMotion
-            initial={{ scaleX: 1, scaleY: 0.1 }}
-            animate={{
-              scaleX: [1, 1, 1, 1.2, 1],
-              scaleY: [0.1, 0.1, 0.1, 1, 1]
-            }}
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: [0, 1, 0], y: [-12, 0, 8] }}
+            exit={{ opacity: 0, y: -12 }}
             // @ts-ignore no problem in operation, although type error appears.
             transition={{
-              duration: 1,
-              delay: 0.2,
-              repeat: 2,
-              repeatType: 'reverse'
+              duration: 2.3,
+              delay: 0.4,
+              repeat: Infinity
             }}
           >
-            <FaKeyboard />
+            Gumu
           </ChakraMotion>
         </Flex>
       </Link>
