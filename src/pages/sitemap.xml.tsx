@@ -22,7 +22,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       loc: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${data.id}`,
       lastmod: format(new Date(data.updatedAt), 'yyyy-MM-dd'),
       priority: 1,
-      changefreq: 'weekly'
+      changefreq: 'daily'
     })
   })
   context.res.setHeader(
