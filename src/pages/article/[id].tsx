@@ -29,18 +29,18 @@ const codeHighlight = (text: string): CheerioAPI => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await clientBlogs.get({
+  const data = await clientBlogs.get<{ contents: BlogType[] }>({
     endpoint: 'blogs',
     queries: { fields: 'id' }
   })
-  const paths = data.contents.map((content: { id: string }) => {
+  const paths = data.contents.map(content => {
     return { params: { id: content.id } }
   })
   return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const blog = await clientBlogs.get({
+  const blog = await clientBlogs.get<BlogType>({
     endpoint: 'blogs',
     contentId: `${params?.id}`
   })
@@ -59,7 +59,7 @@ const Post: VFC<Props> = props => {
   const { staticBlog, id } = props
   const router = useRouter()
 
-  const fetcher = () =>
+  const fetcher = (): Promise<BlogType> =>
     clientBlogs.get({ endpoint: 'blogs', contentId: id }).then(data => data)
   const {
     data: blog,
@@ -80,14 +80,14 @@ const Post: VFC<Props> = props => {
     return <div>failed to load.</div>
   }
 
-  blog!.body = codeHighlight(blog!.body).html()
+  blog.body = codeHighlight(blog.body).html()
 
   return (
     <>
       <Seo
-        pageTitle={blog!.title}
-        pageDescription={blog!.description}
-        pageImg={`${blog!.mainImage.url}?fm=webp&w=200&q=40&dpr=5`}
+        pageTitle={blog.title}
+        pageDescription={blog.description}
+        pageImg={`${blog.mainImage.url}?fm=webp&w=200&q=40&dpr=5`}
       />
 
       <BlogDetail blog={blog} />

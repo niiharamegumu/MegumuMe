@@ -30,7 +30,7 @@ const schema = yup
   .required()
 
 const Contact: VFC = () => {
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL!
   const {
     handleSubmit,
     register,
