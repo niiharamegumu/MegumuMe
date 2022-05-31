@@ -18,7 +18,8 @@ type Props = {
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await clientBlogs.get<{ contents: BlogType[] }>({
-    endpoint: 'blogs'
+    endpoint: 'blogs',
+    queries: { limit: 20 }
   })
   return {
     props: {
@@ -31,7 +32,9 @@ export const getStaticProps: GetStaticProps = async () => {
 export const Blogs: VFC<Props> = props => {
   const { staticBlogs } = props
   const fetcher = (): Promise<BlogType[]> =>
-    clientBlogs.get({ endpoint: 'blogs' }).then(data => data.contents)
+    clientBlogs
+      .get({ endpoint: 'blogs', queries: { limit: 20 } })
+      .then(data => data.contents)
   const {
     data: blogs,
     error,
