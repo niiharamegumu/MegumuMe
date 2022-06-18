@@ -26,7 +26,7 @@ const BlogsNav: VFC = () => {
       fontSize={{ base: 'md', lg: 'xl' }}
     >
       <Link
-        href="/blogs/"
+        href="/blogs/1"
         _hover={{ textDecoration: 'none' }}
         {...(isActivePage('/blogs/') ? activeStyles : styles)}
       >
