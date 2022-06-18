@@ -265,7 +265,16 @@ const Home: NextPage = () => {
           Career
         </HeadH2>
         <Accordion allowToggle>
-          <AccordionContent title="2020年12月 株式会社Libertyship 現在">
+          <AccordionContent title="2022/06 ~ 株式会社トーフラボ">
+            フロントエンド領域を得意としますが幅広くテクノロジーを活用したシステムの開発を行っていく予定です。
+            <br />
+            引き続き宮崎県にて活動をしていきます。
+            <br />
+            宮崎のエンジニアリングの活性化にも取り組んでいく予定です。
+            <br />
+            またトーフラボはイギゲングループに属しており、エンジニアリング、クリエイティブ、コンサルティングを含め一貫した制作を行っております。
+          </AccordionContent>
+          <AccordionContent title="2020/12 - 2022/05 株式会社Libertyship">
             前職で魅力を感じたフロントエンドのお仕事をすべくアラタナ時代のご縁があり株式会社Libertyshipへジョイン。
             <br />
             年間10件以上のサイトのメイン開発兼プロジェクトマネジメントを行い
@@ -281,7 +290,7 @@ const Home: NextPage = () => {
             <br />
             直近では、自社サービス内において、サウナ施設の予約システム・ロケーション管理システムをShopifyAppを使用して構築する。
           </AccordionContent>
-          <AccordionContent title="2020年04月 株式会社ZOZOテクノロジーズへ合併">
+          <AccordionContent title="2020/04 株式会社ZOZOテクノロジーズへ合併">
             株式会社アラタナが株式会社ZOZOテクノロジーズへ吸収合併。
             <br />
             合併後も変わらずアラタナの頃の開発を行う。
@@ -290,7 +299,7 @@ const Home: NextPage = () => {
             <br />
             一身上の都合により退社（健康上の都合）
           </AccordionContent>
-          <AccordionContent title="2019年04月 株式会社アラタナ 新卒入社">
+          <AccordionContent title="2019/04 株式会社アラタナ">
             株式会社アラタナ 新卒入社
             <br />
             配属は、バックエンドエンジニア。AWS・Pythonを使用しAPIの開発、データ連携周りの保守や管理を行う。
@@ -298,7 +307,7 @@ const Home: NextPage = () => {
             PagerDuty、DataDog、Lambda、Cloud Watch
             Logs、SNS、S3を活用し、エラー監視ツールの強化開発を行う。
           </AccordionContent>
-          <AccordionContent title="2019年03月 宮崎大学 卒業">
+          <AccordionContent title="2019/03 宮崎大学 卒業">
             宮崎大学 教育文化学部 人間社会課程
             社会システムコースにて、経済学、法学などを学ぶ。
             <br />
