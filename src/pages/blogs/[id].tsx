@@ -19,7 +19,7 @@ type Props = {
   id: number
   isLastPage: boolean
 }
-const maxNumPerPage: number = 10
+const maxNumPerPage: number = 6
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await clientBlogs.get<ResponseBlogsType>({
