@@ -4,6 +4,7 @@ import { FcHome, FcServices, FcReading, FcFeedback } from 'react-icons/fc'
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai'
 
 import { NavLink } from '../components/NavLink'
+import { routePath } from '../utils/routePath'
 
 export const Nav: VFC = () => {
   return (
@@ -17,28 +18,28 @@ export const Nav: VFC = () => {
       justifyContent={{ base: 'center', lg: 'end' }}
     >
       <GridItem>
-        <NavLink path="/" ariaLabel="Home Page">
+        <NavLink path={routePath.top} ariaLabel="Home Page">
           <Box fontSize={{ base: '30px', md: '40px' }}>
             <FcHome />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/products/" ariaLabel="Product Lisst">
+        <NavLink path={routePath.products} ariaLabel="Product Lisst">
           <Box fontSize={{ base: '30px', md: '40px' }}>
             <FcServices />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/blogs/1" ariaLabel="Blog List">
+        <NavLink path={routePath.blogs.index} ariaLabel="Blog List">
           <Box fontSize={{ base: '30px', md: '40px' }}>
             <FcReading />
           </Box>
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/contact/" ariaLabel="Contact">
+        <NavLink path={routePath.contact} ariaLabel="Contact">
           <Box fontSize={{ base: '30px', md: '40px' }}>
             <FcFeedback />
           </Box>
