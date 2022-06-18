@@ -11,7 +11,6 @@
 # next.js
 /.next/
 /out/
-/public/fallback-*.js
 
 # production
 /build
@@ -45,8 +44,3 @@ yarn-error.log*
 /public/worker-*.js
 /public/workbox-*.js.map
 /public/worker-*.js.map
-
-# SEO
-/public/robots.txt
-/public/sitemap.xml
-/public/sitemap-0.xml
