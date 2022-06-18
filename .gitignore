@@ -47,3 +47,5 @@ yarn-error.log*
 
 # SEO
 /public/fallback-*.js
+/public/sitemap.xml
+/public/sitemap-*.xml
