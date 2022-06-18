@@ -92,7 +92,7 @@ const Post: VFC<Props> = props => {
       />
 
       <BlogDetail blog={blog} />
-      <VisibilitySection delay={0.4} chakraProps={{ mt: 6 }}>
+      <VisibilitySection delay={0.2} chakraProps={{ mt: 6 }}>
         <Button
           onClick={() => router.back()}
           color="gray.900"

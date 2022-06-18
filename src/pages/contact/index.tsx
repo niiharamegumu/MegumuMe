@@ -83,7 +83,7 @@ const Contact: VFC = () => {
         <FcFeedback />
         contact
       </HeadH2>
-      <VisibilitySection delay={0.4}>
+      <VisibilitySection delay={0.2}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl isInvalid={!!errors.name}>
             <FormLabel htmlFor="name">名前</FormLabel>
