@@ -49,7 +49,7 @@ const Home: NextPage = () => {
           borderRadius={10}
           p={{ base: 4, md: 6 }}
         >
-          <HeadH3>Gumu（Niihara Megumu）</HeadH3>
+          <HeadH3>Megu（Niihara Megumu）</HeadH3>
           <Text fontSize="sm" as="p" mb={2}>
             1996.12.23 25 years old.
           </Text>
