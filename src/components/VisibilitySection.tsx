@@ -1,4 +1,4 @@
-import { ReactNode, VFC } from 'react'
+import { memo, ReactNode, VFC } from 'react'
 import { chakra, ChakraProps, shouldForwardProp } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
@@ -14,7 +14,8 @@ const ChakraBox = chakra(motion.div, {
   }
 })
 
-const VisibilitySection: VFC<Props> = props => {
+// eslint-disable-next-line react/display-name
+const VisibilitySection: VFC<Props> = memo(props => {
   const { children, delay = 0, chakraProps } = props
   return (
     <ChakraBox
@@ -32,6 +33,6 @@ const VisibilitySection: VFC<Props> = props => {
       {children}
     </ChakraBox>
   )
-}
+})
 
 export default VisibilitySection

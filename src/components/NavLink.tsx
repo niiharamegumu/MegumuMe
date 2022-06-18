@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { memo, VFC } from 'react'
 import { Flex, Link } from '@chakra-ui/react'
 
 type Props = {
@@ -8,7 +8,8 @@ type Props = {
   ariaLabel?: string
 }
 
-export const NavLink: VFC<Props> = props => {
+// eslint-disable-next-line react/display-name
+export const NavLink: VFC<Props> = memo(props => {
   const { children, path, isBlank = false, ariaLabel } = props
   return (
     <Link href={path} isExternal={isBlank} aria-label={ariaLabel}>
@@ -25,4 +26,4 @@ export const NavLink: VFC<Props> = props => {
       </Flex>
     </Link>
   )
-}
+})
