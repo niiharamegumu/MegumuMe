@@ -16,7 +16,7 @@ export const AccordionContent: VFC<Props> = props => {
   const { title, children } = props
   return (
     <AccordionItem border="none" mb={2}>
-      {({ isExpanded }) => (
+      {({ isExpanded }: { isExpanded: boolean }) => (
         <>
           <h2>
             <AccordionButton
