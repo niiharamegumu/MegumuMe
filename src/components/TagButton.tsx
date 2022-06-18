@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { memo, VFC } from 'react'
 import { AiFillTag } from 'react-icons/ai'
 import { Flex, Tag, TagLabel } from '@chakra-ui/react'
 
@@ -6,7 +6,8 @@ type Props = {
   tag: string
 }
 
-export const TagButton: VFC<Props> = props => {
+// eslint-disable-next-line react/display-name
+export const TagButton: VFC<Props> = memo(props => {
   const { tag } = props
   return (
     <Tag
@@ -22,4 +23,4 @@ export const TagButton: VFC<Props> = props => {
       </Flex>
     </Tag>
   )
-}
+})

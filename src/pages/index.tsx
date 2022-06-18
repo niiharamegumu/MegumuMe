@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         pageImgWidth={1280}
         pageImgHeight={640}
       />
-      <VisibilitySection delay={0.4} chakraProps={{ mb: 10 }}>
+      <VisibilitySection delay={0.2} chakraProps={{ mb: 10 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcIdea />
           about
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         </Box>
       </VisibilitySection>
 
-      <VisibilitySection delay={0.4} chakraProps={{ mb: 10 }}>
+      <VisibilitySection delay={0.2} chakraProps={{ mb: 10 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcCommandLine />
           Skills
@@ -259,7 +259,7 @@ const Home: NextPage = () => {
         </Grid>
       </VisibilitySection>
 
-      <VisibilitySection delay={0.4} chakraProps={{ mb: 0 }}>
+      <VisibilitySection delay={0.2} chakraProps={{ mb: 0 }}>
         <HeadH2 display="flex" alignItems="center" gap={2}>
           <FcBusinessman />
           Career

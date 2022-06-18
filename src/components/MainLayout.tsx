@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { memo, VFC } from 'react'
 import { Grid, GridItem } from '@chakra-ui/react'
 
 type Props = {
@@ -6,7 +6,8 @@ type Props = {
   rightComponents?: React.ReactNode
 }
 
-export const MainLayout: VFC<Props> = props => {
+// eslint-disable-next-line react/display-name
+export const MainLayout: VFC<Props> = memo(props => {
   const { children, rightComponents } = props
   return (
     <Grid
@@ -37,4 +38,4 @@ export const MainLayout: VFC<Props> = props => {
       </GridItem>
     </Grid>
   )
-}
+})

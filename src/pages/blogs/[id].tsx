@@ -115,7 +115,7 @@ export const Blogs: VFC<Props> = props => {
           </VisibilitySection>
         ))}
       </Grid>
-      <VisibilitySection delay={0.15}>
+      <VisibilitySection delay={0.1}>
         <Pagination
           currentPagination={id}
           pagePath="/blogs/"

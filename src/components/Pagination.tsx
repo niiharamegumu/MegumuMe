@@ -1,5 +1,5 @@
 import { Flex, Link } from '@chakra-ui/react'
-import { VFC } from 'react'
+import { memo, VFC } from 'react'
 import { FcPrevious, FcNext } from 'react-icons/fc'
 
 type Props = {
@@ -8,7 +8,8 @@ type Props = {
   isLastPage: boolean
 }
 
-const Pagination: VFC<Props> = props => {
+// eslint-disable-next-line react/display-name
+const Pagination: VFC<Props> = memo(props => {
   const { pagePath, currentPagination, isLastPage } = props
   const prePage = currentPagination - 1
   const nextPage = currentPagination + 1
@@ -33,6 +34,6 @@ const Pagination: VFC<Props> = props => {
       </Link>
     </Flex>
   )
-}
+})
 
 export default Pagination
