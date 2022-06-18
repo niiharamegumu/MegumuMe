@@ -31,7 +31,7 @@ export const Nav: VFC = () => {
         </NavLink>
       </GridItem>
       <GridItem>
-        <NavLink path="/blogs/" ariaLabel="Blog List">
+        <NavLink path="/blogs/1" ariaLabel="Blog List">
           <Box fontSize={{ base: '30px', md: '40px' }}>
             <FcReading />
           </Box>
