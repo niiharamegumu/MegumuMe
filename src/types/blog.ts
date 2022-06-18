@@ -23,3 +23,10 @@ export type BlogType = {
     }
   ]
 }
+
+export type ResponseBlogsType = {
+  contents: BlogType[]
+  totalCount: number
+  offset: number
+  limit: number
+}

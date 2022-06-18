@@ -10,6 +10,7 @@ import Pagination from '../../../components/Pagination'
 import Seo from '../../../components/Seo'
 import { HeadH2 } from '../../../components/style/Common'
 import VisibilitySection from '../../../components/VisibilitySection'
+import { calcPageCount } from '../../../utils/functions'
 
 type Note = {
   id: Number
@@ -41,18 +42,12 @@ const fetchNotes = async (pageId: string | string[] | undefined) => {
   return { notes, isLastPage }
 }
 
-const calcPageCount = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const maxNumPerPage: number = 6
   const res = await fetch(noteGetUrl)
   const result = await res.json()
   const allNotesCount: number = result.data.totalCount
-  return allNotesCount % maxNumPerPage === 0
-    ? allNotesCount / maxNumPerPage
-    : Math.floor(allNotesCount / maxNumPerPage) + 1
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const pageCount = await calcPageCount()
+  const pageCount = await calcPageCount(maxNumPerPage, allNotesCount)
   const paths = []
   for (let i = 1; i <= pageCount; i++) {
     paths.push({ params: { id: String(i) } })
