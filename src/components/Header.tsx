@@ -36,7 +36,7 @@ export const Header: VFC = () => {
               repeat: Infinity
             }}
           >
-            Gumu
+            Megu
           </ChakraMotion>
         </Flex>
       </Link>
