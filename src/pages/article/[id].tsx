@@ -1,7 +1,7 @@
 import { useEffect, VFC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { Box, Link, Spinner } from '@chakra-ui/react'
+import { Box, Button, Link, Spinner } from '@chakra-ui/react'
 import useSWR from 'swr'
 import cheerio, { CheerioAPI } from 'cheerio'
 import hljs from 'highlight.js'
@@ -93,8 +93,8 @@ const Post: VFC<Props> = props => {
 
       <BlogDetail blog={blog} />
       <VisibilitySection delay={0.4} chakraProps={{ mt: 6 }}>
-        <Link
-          href="/blogs/"
+        <Button
+          onClick={() => router.back()}
           color="gray.900"
           display={{ base: 'block', lg: 'inline-block' }}
           textAlign="center"
@@ -106,7 +106,7 @@ const Post: VFC<Props> = props => {
           _hover={{ border: 'none', bg: 'blue.600', color: 'gray.100' }}
         >
           一覧に戻る
-        </Link>
+        </Button>
       </VisibilitySection>
     </>
   )
