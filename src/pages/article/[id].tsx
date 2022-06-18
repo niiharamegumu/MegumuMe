@@ -12,6 +12,7 @@ import { BlogDetail } from '../../components/blogs/BlogDetail'
 import { clientBlogs } from '../../libs/microCMS/client'
 import { BlogType } from '../../types/blog'
 import VisibilitySection from '../../components/VisibilitySection'
+import { routePath } from '../../utils/routePath'
 
 type Props = {
   staticBlog: BlogType

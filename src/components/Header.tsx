@@ -2,6 +2,7 @@ import { VFC } from 'react'
 import Link from 'next/link'
 import { Box, chakra, Flex, shouldForwardProp } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import { routePath } from '../utils/routePath'
 
 const ChakraMotion = chakra(motion.div, {
   shouldForwardProp: prop => {
@@ -12,7 +13,7 @@ const ChakraMotion = chakra(motion.div, {
 export const Header: VFC = () => {
   return (
     <Box as="header" pt={8}>
-      <Link href="/" passHref>
+      <Link href={routePath.top} passHref>
         <Flex
           bgGradient="linear(to-br, #6139FD, #974FFE, #C260FE)"
           cursor="pointer"

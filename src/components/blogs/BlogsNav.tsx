@@ -1,6 +1,7 @@
 import { VFC } from 'react'
 import { useRouter } from 'next/router'
 import { Flex, Link } from '@chakra-ui/react'
+import { routePath } from '../../utils/routePath'
 
 const BlogsNav: VFC = () => {
   const router = useRouter()
@@ -26,14 +27,14 @@ const BlogsNav: VFC = () => {
       fontSize={{ base: 'md', lg: 'xl' }}
     >
       <Link
-        href="/blogs/1"
+        href={routePath.blogs.index}
         _hover={{ textDecoration: 'none' }}
         {...(isActivePage('/blogs/') ? activeStyles : styles)}
       >
         megumu.me
       </Link>
       <Link
-        href="/blogs/notes/1"
+        href={routePath.blogs.note}
         _hover={{ textDecoration: 'none' }}
         {...(isActivePageRegex('/blogs/notes/[0-9]*') ? activeStyles : styles)}
       >

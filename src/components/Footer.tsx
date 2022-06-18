@@ -1,5 +1,6 @@
 import { VFC } from 'react'
 import { Box, Text, Flex, Link } from '@chakra-ui/react'
+import { routePath } from '../utils/routePath'
 
 export const Footer: VFC = () => {
   return (
@@ -21,7 +22,7 @@ export const Footer: VFC = () => {
         alignItems="center"
         gap={2}
       >
-        <Link href="/policy/privacy/">Privacy Policy</Link>
+        <Link href={routePath.privacy}>Privacy Policy</Link>
         <Text as="small">&copy; 2022 by niihara megumu.</Text>
       </Flex>
     </Box>
