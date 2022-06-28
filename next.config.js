@@ -15,7 +15,13 @@ const config = {
   pwa: {
     dest: 'public',
     runtimeCaching,
-    buildExcludes: [/middleware-manifest.json$/]
+    buildExcludes: [
+      /middleware-manifest\.json$/,
+      /_middleware\.js$/,
+      /_middleware\.js\.map$/,
+      /middleware-runtime\.js$/,
+      /middleware-runtime\.js\.map$/
+    ]
   }
 }
 
