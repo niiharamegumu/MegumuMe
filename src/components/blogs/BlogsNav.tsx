@@ -5,7 +5,7 @@ import { routePath } from '../../utils/routePath'
 
 const BlogsNav: VFC = () => {
   const router = useRouter()
-  const activePage = router.asPath
+  const activePage = router.pathname.concat('/') as string
   const styles = { color: 'gray.500' }
   const activeStyles = {
     fontWeight: 'bold',
@@ -13,6 +13,7 @@ const BlogsNav: VFC = () => {
     borderColor: 'white',
     color: 'white'
   }
+  const isActivePage = (path: string): boolean => path === activePage
   const isActivePageRegex = (path: string): boolean => {
     const regex = new RegExp(path, 'g')
     return regex.test(activePage)
@@ -28,16 +29,14 @@ const BlogsNav: VFC = () => {
       <Link
         href={routePath.blogs.index}
         _hover={{ textDecoration: 'none' }}
-        {...(isActivePageRegex('^/blogs/[0-9]*$') ? activeStyles : styles)}
+        {...(isActivePage('/blogs/') ? activeStyles : styles)}
       >
         megumu.me
       </Link>
       <Link
         href={routePath.blogs.note}
         _hover={{ textDecoration: 'none' }}
-        {...(isActivePageRegex('^/blogs/notes/[0-9]*$')
-          ? activeStyles
-          : styles)}
+        {...(isActivePageRegex('/blogs/notes/[0-9]*') ? activeStyles : styles)}
       >
         note.com
       </Link>
