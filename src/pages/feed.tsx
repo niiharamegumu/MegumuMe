@@ -33,7 +33,9 @@ async function generateFeedXml() {
   })
 
   const { contents: posts } = await clientBlogs.get<{ contents: BlogType[] }>({
-    endpoint: 'blogs'
+    endpoint: 'blogs',
+    // 一旦、決め打ち.100件ほどは取得できる計算.
+    queries: { limit: 100 }
   })
   posts?.forEach(post => {
     feed.item({
