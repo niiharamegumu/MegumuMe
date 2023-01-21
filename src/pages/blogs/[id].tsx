@@ -19,7 +19,7 @@ type Props = {
   id: number
   isLastPage: boolean
 }
-const maxNumPerPage: number = 6
+const maxNumPerPage: number = 20
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await clientBlogs.get<ResponseBlogsType>({
@@ -89,23 +89,9 @@ export const Blogs: VFC<Props> = props => {
         blogs
       </HeadH2>
       <BlogsNav />
-      <Grid
-        templateColumns={{
-          base: '1fr',
-          md: 'repeat(2, 1fr)'
-        }}
-        gap={6}
-      >
+      <Grid templateColumns={'1fr'} gap={2}>
         {blogs?.map(blog => (
-          <VisibilitySection
-            key={blog.id}
-            delay={0.15}
-            chakraProps={{
-              bg: 'gray.300',
-              borderRadius: 10,
-              overflow: 'hidden'
-            }}
-          >
+          <VisibilitySection key={blog.id} delay={0.15}>
             <BlogCard
               link={`/article/${blog.id}`}
               title={blog.title}

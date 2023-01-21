@@ -66,10 +66,7 @@ const ProductsList: VFC<Props> = props => {
             delay={0.15}
             key={product.id}
             chakraProps={{
-              mb: 0,
-              bg: 'gray.300',
-              borderRadius: 10,
-              overflow: 'hidden'
+              mb: 0
             }}
           >
             <ProductCard product={product} />

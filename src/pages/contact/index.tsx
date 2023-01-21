@@ -91,8 +91,7 @@ const Contact: VFC = () => {
               id="name"
               placeholder="新原 めぐむ"
               {...register('name')}
-              color="gray.900"
-              bg="gray.200"
+              bg="gray.800"
               _placeholder={{ color: 'gray.500' }}
             />
             {errors.name && (
@@ -106,8 +105,7 @@ const Contact: VFC = () => {
                 id="mail"
                 placeholder="info@example.com"
                 {...register('mail')}
-                color="gray.900"
-                bg="gray.200"
+                bg="gray.800"
                 _placeholder={{ color: 'gray.500' }}
               />
               {errors.mail && (
@@ -123,8 +121,7 @@ const Contact: VFC = () => {
                 placeholder="お問い合わせ内容をご記入ください。"
                 {...register('body')}
                 h="30vh"
-                color="gray.900"
-                bg="gray.200"
+                bg="gray.800"
                 _placeholder={{ color: 'gray.500' }}
               />
               {errors.body && (
@@ -135,11 +132,11 @@ const Contact: VFC = () => {
           <Button
             mt={{ base: 6, md: 4 }}
             w={{ base: '100%', md: 'auto' }}
-            bg="gray.300"
+            bg={'purple.400'}
             color="gray.900"
             fontWeight="bold"
             _hover={{
-              bg: 'blue.600',
+              bg: 'purple.600',
               color: 'gray.100'
             }}
             isLoading={isSubmitting}

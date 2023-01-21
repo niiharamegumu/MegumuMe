@@ -19,7 +19,7 @@ export const BlogCard: VFC<Props> = memo(props => {
 
   return (
     <Link href={link} _hover={{ border: 'none' }} isExternal={isBlank}>
-      <Box color="gray.900" p={{ base: 4, md: 6 }}>
+      <Box py={{ base: 4, md: 6 }}>
         <Heading
           as="h3"
           fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
@@ -34,7 +34,6 @@ export const BlogCard: VFC<Props> = memo(props => {
           as="time"
           display="block"
           fontSize={{ base: 'xs', sm: 'md' }}
-          color="gray.600"
           mt={2}
         >
           {format(new Date(createdAt), 'yyyy.MM.dd')}
