@@ -8,7 +8,7 @@ type Props = {
 // eslint-disable-next-line react/display-name
 const BlogDetailBody: VFC<Props> = memo(props => {
   const { body } = props
-  const color = 'gray.900'
+  const color = 'white'
   return (
     <Box
       mt={4}
@@ -21,35 +21,44 @@ const BlogDetailBody: VFC<Props> = memo(props => {
           fontWeight: 'bold',
           color: color,
           base: { fontSize: '2xl' },
-          sm: { fontSize: '3xl' }
+          sm: { fontSize: '3xl' },
+          mt: { base: 6, sm: 10, md: 12 }
         },
         h2: {
-          fontSize: '2xl',
+          fontSize: 'xl',
           fontWeight: 'bold',
-          color: color
+          color: color,
+          mt: { base: 8, sm: 10, md: 12 }
         },
         h3: {
           fontSize: 'xl',
           fontWeight: 'bold',
-          color: color
+          color: color,
+          mt: 4
         },
         h4: {
           fontWeight: 'bold',
           color: color,
           base: { fontSize: 'md' },
-          sm: { fontSize: 'lg' }
+          sm: { fontSize: 'lg' },
+          mt: 4
         },
         h5: {
           fontSize: 'md',
           fontWeight: 'bold',
-          color: color
+          color: color,
+          mt: 4
         },
-        p: { fontSize: 'md', color: color, lineHeight: '1.8' },
+        p: {
+          fontSize: { base: 'sm', sm: 'md' },
+          color: color,
+          lineHeight: '1.8'
+        },
         blockquote: {
           borderLeft: '3px solid',
           borderColor: 'gray.500',
           pl: 4,
-          color: 'gray.500'
+          color: color
         },
         a: {
           fontWeight: 'bold',
@@ -61,7 +70,9 @@ const BlogDetailBody: VFC<Props> = memo(props => {
         },
         'pre code': {
           borderRadius: 10,
-          overflow: 'scroll'
+          overflow: 'scroll',
+          backgroundColor: 'gray.700',
+          fontSize: { base: 'xs', sm: 'sm' }
         },
         img: {
           w: '100%',

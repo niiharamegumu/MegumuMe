@@ -20,11 +20,8 @@ export const AccordionContent: VFC<Props> = props => {
         <>
           <h2>
             <AccordionButton
-              bg="gray.700"
-              borderTopRadius={10}
               borderBottomRadius={isExpanded ? 0 : 10}
               _focus={{ boxShadow: 'none' }}
-              _hover={{ bg: 'gray.700' }}
             >
               <Box flex="1" textAlign="left" py={2}>
                 {title}
@@ -36,12 +33,7 @@ export const AccordionContent: VFC<Props> = props => {
               )}
             </AccordionButton>
           </h2>
-          <AccordionPanel
-            p={8}
-            bg="gray.300"
-            color="gray.900"
-            borderBottomRadius={10}
-          >
+          <AccordionPanel p={8} bg="gray.800" borderBottomRadius={10}>
             {children}
           </AccordionPanel>
         </>

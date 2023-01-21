@@ -12,7 +12,8 @@ export const TagButton: VFC<Props> = memo(props => {
   return (
     <Tag
       variant="outline"
-      colorScheme="teal"
+      color={'purple.400'}
+      boxShadow="none"
       mr="2px"
       mb="2px"
       fontSize={{ base: 'xs', sm: 'sm' }}

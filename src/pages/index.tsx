@@ -42,26 +42,20 @@ const Home: NextPage = () => {
           <FcIdea />
           about
         </HeadH2>
-        <Box
-          as="section"
-          bg="gray.300"
-          color="gray.900"
-          borderRadius={10}
-          p={{ base: 4, md: 6 }}
-        >
+        <Box as="section" py={{ base: 4, md: 6 }}>
           <HeadH3>Megu（Niihara Megumu）</HeadH3>
           <Text fontSize="sm" as="p" mb={2}>
-            1996.12.23 25 years old.
+            1996.12.23.
           </Text>
           <Text fontSize="sm" as="p" mb={2}>
             宮崎生まれ、宮崎育ち
             <br />
             フロントエンドを主にしている地方在住エンジニア。
             <br />
-            独学で日々学んでいます。
+            宮崎でずっと生きていく手段を模索中・・・
           </Text>
           <Text fontSize="sm" as="p">
-            宮崎でずっと生きていく手段を模索中・・・
+            LIKE: Coffee, Solo Camp, Cooking
           </Text>
         </Box>
       </VisibilitySection>
@@ -78,9 +72,7 @@ const Home: NextPage = () => {
         >
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -93,9 +85,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -108,9 +98,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -123,9 +111,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={70}
@@ -138,9 +124,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -153,13 +137,11 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
-              color="gray.800"
+              color="gray.100"
               flexDirection="column"
             >
               <SiNextdotjs />
@@ -168,9 +150,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -183,9 +163,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -198,9 +176,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -213,9 +189,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -228,9 +202,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -243,9 +215,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              bg="gray.300"
               h="130px"
-              borderRadius={10}
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -265,16 +235,13 @@ const Home: NextPage = () => {
           Career
         </HeadH2>
         <Accordion allowToggle>
-          <AccordionContent title="2022/06 ~ 株式会社トーフラボ">
-            フロントエンド領域を得意としますが幅広くテクノロジーを活用したシステムの開発を行っていく予定です。
+          <AccordionContent title="2022/06 ~ イジゲングループ株式会社">
+            Laravel, PHP, JS, Docker, AWS(ES2,ECS,ECR,VPC,RDS,CloudWatch
+            etc...), CircleCIなどを用いてsystemの開発に従事。
             <br />
-            引き続き宮崎県にて活動をしていきます。
-            <br />
-            宮崎のエンジニアリングの活性化にも取り組んでいく予定です。
-            <br />
-            またトーフラボはイジゲングループに属しており、エンジニアリング、クリエイティブ、コンサルティングを含め一貫した制作を行っております。
+            より良いシステムの構築に日々邁進中...。
           </AccordionContent>
-          <AccordionContent title="2020/12 - 2022/05 株式会社Libertyship">
+          <AccordionContent title="2020/12 株式会社Libertyship">
             前職で魅力を感じたフロントエンドのお仕事をすべくアラタナ時代のご縁があり株式会社Libertyshipへジョイン。
             <br />
             年間10件以上のサイトのメイン開発兼プロジェクトマネジメントを行い
@@ -290,19 +257,13 @@ const Home: NextPage = () => {
             <br />
             直近では、自社サービス内において、サウナ施設の予約システム・ロケーション管理システムをShopifyAppを使用して構築する。
           </AccordionContent>
-          <AccordionContent title="2020/04 株式会社ZOZOテクノロジーズへ合併">
-            株式会社アラタナが株式会社ZOZOテクノロジーズへ吸収合併。
-            <br />
-            合併後も変わらずアラタナの頃の開発を行う。
-            <br />
-            データ管理ダッシュボードの開発のサポートを行った際にフロントエンドの楽しさに気づく。
-            <br />
-            一身上の都合により退社（健康上の都合）
-          </AccordionContent>
           <AccordionContent title="2019/04 株式会社アラタナ">
             株式会社アラタナ 新卒入社
             <br />
             配属は、バックエンドエンジニア。AWS・Pythonを使用しAPIの開発、データ連携周りの保守や管理を行う。
+            <br />
+            その後、データ管理ダッシュボードの開発を行なう。その際にフロントエンドの楽しさに気づく。
+            <br />
             <br />
             PagerDuty、DataDog、Lambda、Cloud Watch
             Logs、SNS、S3を活用し、エラー監視ツールの強化開発を行う。
@@ -312,12 +273,6 @@ const Home: NextPage = () => {
             社会システムコースにて、経済学、法学などを学ぶ。
             <br />
             専攻は経済学。
-            <br />
-            産業革命の歴史、経済を勉強しているときにパソコンの経済を知る。
-            <br />
-            これからの時代は、「パソコンだ！」と感じ、本屋さんでHTML,CSSの本を買い独学を開始。
-            <br />
-            基本的なWebページを作成しながら傍らWeb系企業の就職活動を開始。
           </AccordionContent>
         </Accordion>
       </VisibilitySection>

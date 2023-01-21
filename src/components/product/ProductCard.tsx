@@ -23,10 +23,9 @@ export const ProductCard: VFC<Props> = memo(props => {
           position="absolute"
           top={2}
           right={2}
-          bg="gray.300"
+          bg="gray.900"
           p={1}
           borderRadius={4}
-          color="gray.900"
         >
           <FaExternalLinkAlt fontSize="20px" />
         </Link>
@@ -40,7 +39,7 @@ export const ProductCard: VFC<Props> = memo(props => {
           alt={product.title}
         />
       </Flex>
-      <Box p={4} color="gray.900">
+      <Box p={4}>
         <Heading as="h3" fontSize="xl" mb={2}>
           {product.title}
         </Heading>

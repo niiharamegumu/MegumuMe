@@ -86,23 +86,9 @@ const BlogsNotes: VFC<Props> = props => {
         blogs
       </HeadH2>
       <BlogsNav />
-      <Grid
-        templateColumns={{
-          base: '1fr',
-          md: 'repeat(2, 1fr)'
-        }}
-        gap={6}
-      >
+      <Grid templateColumns={'1fr'} gap={2}>
         {staticNotes?.map(note => (
-          <VisibilitySection
-            key={String(note.id)}
-            delay={0.15}
-            chakraProps={{
-              bg: 'gray.300',
-              borderRadius: 10,
-              overflow: 'hidden'
-            }}
-          >
+          <VisibilitySection key={String(note.id)} delay={0.15}>
             <BlogCard
               link={note.noteUrl}
               title={note.name}

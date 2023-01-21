@@ -95,17 +95,17 @@ const Post: VFC<Props> = props => {
       <VisibilitySection delay={0.2} chakraProps={{ mt: 6 }}>
         <Button
           onClick={() => router.back()}
+          bg={'purple.400'}
           color="gray.900"
           display={{ base: 'block', lg: 'inline-block' }}
           textAlign="center"
-          bg="gray.300"
           borderRadius={6}
           p=".6em 1em"
           fontSize="sm"
           fontWeight="bold"
-          _hover={{ border: 'none', bg: 'blue.600', color: 'gray.100' }}
+          _hover={{ border: 'none', bg: 'purple.600', color: 'gray.100' }}
         >
-          一覧に戻る
+          戻る
         </Button>
       </VisibilitySection>
     </>
