@@ -10,13 +10,20 @@ import {
 } from '@chakra-ui/react'
 import { FcIdea, FcCommandLine, FcBusinessman } from 'react-icons/fc'
 import { AiFillHtml5 } from 'react-icons/ai'
-import { FaCss3Alt, FaReact, FaVuejs } from 'react-icons/fa'
+import {
+  FaCss3Alt,
+  FaReact,
+  FaVuejs,
+  FaLaravel,
+  FaAws,
+  FaDocker
+} from 'react-icons/fa'
 import { IoLogoJavascript } from 'react-icons/io'
 import {
   SiPhp,
   SiNextdotjs,
   SiJquery,
-  SiPython,
+  SiTypescript,
   SiShopify,
   SiNuxtdotjs,
   SiFirebase
@@ -66,13 +73,16 @@ const Home: NextPage = () => {
           Skills
         </HeadH2>
         <Grid
-          templateColumns={{ base: 'repeat(2,1fr)', sm: 'repeat(4,1fr)' }}
+          templateColumns={{
+            base: 'repeat(auto-fit, minmax(60px, 1fr))',
+            md: 'repeat(auto-fit, minmax(80px, 1fr))'
+          }}
           gap={4}
           alignItems="center"
         >
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -85,7 +95,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -98,7 +108,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -111,7 +121,20 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
+              justifyContent="center"
+              alignItems="center"
+              fontSize={60}
+              color="blue.600"
+              flexDirection="column"
+            >
+              <SiTypescript />
+              <Text fontSize="sm">TypeScript</Text>
+            </Flex>
+          </GridItem>
+          <GridItem>
+            <Flex
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={70}
@@ -124,7 +147,20 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
+              justifyContent="center"
+              alignItems="center"
+              fontSize={70}
+              color="red.500"
+              flexDirection="column"
+            >
+              <FaLaravel />
+              <Text fontSize="sm">Laravel</Text>
+            </Flex>
+          </GridItem>
+          <GridItem>
+            <Flex
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -137,7 +173,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -150,7 +186,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -163,7 +199,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -176,7 +212,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -189,20 +225,33 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
-              color="blue.600"
+              color="blue.400"
               flexDirection="column"
             >
-              <SiPython />
-              <Text fontSize="sm">Python</Text>
+              <FaDocker />
+              <Text fontSize="sm">Docker</Text>
             </Flex>
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
+              justifyContent="center"
+              alignItems="center"
+              fontSize={60}
+              color="orange.600"
+              flexDirection="column"
+            >
+              <FaAws />
+              <Text fontSize="sm">AWS</Text>
+            </Flex>
+          </GridItem>
+          <GridItem>
+            <Flex
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
@@ -215,7 +264,7 @@ const Home: NextPage = () => {
           </GridItem>
           <GridItem>
             <Flex
-              h="130px"
+              h="120px"
               justifyContent="center"
               alignItems="center"
               fontSize={60}
