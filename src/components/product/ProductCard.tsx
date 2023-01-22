@@ -39,7 +39,7 @@ export const ProductCard: VFC<Props> = memo(props => {
           alt={product.title}
         />
       </Flex>
-      <Box p={4}>
+      <Box py={4}>
         <Heading as="h3" fontSize="xl" mb={2}>
           {product.title}
         </Heading>
