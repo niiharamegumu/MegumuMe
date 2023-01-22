@@ -62,7 +62,8 @@ const BlogDetailBody: VFC<Props> = memo(props => {
         },
         a: {
           fontWeight: 'bold',
-          color: color
+          color: 'purple.400',
+          textDecoration: 'underline'
         },
         li: {
           mb: 2,
