@@ -23,10 +23,8 @@ const Privacy: VFC = () => {
       <VisibilitySection
         delay={0.4}
         chakraProps={{
-          bg: 'gray.300',
-          color: 'gray.900',
           borderRadius: 10,
-          p: { base: 4, md: 6 }
+          py: { base: 4, md: 6 }
         }}
       >
         <HeadH3>個人情報の利用目的</HeadH3>
