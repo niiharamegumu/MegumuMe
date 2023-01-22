@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.contents.map(content => {
     return { params: { id: content.id } }
   })
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       staticBlog: blog,
       id: params?.id
     },
-    revalidate: 30
+    revalidate: 86400 * 3
   }
 }
 
@@ -74,7 +74,7 @@ const Post: VFC<Props> = props => {
     mutate()
   }, [mutate])
 
-  if (router.isFallback || !blog) {
+  if (!blog) {
     return <Spinner />
   }
   if (error) {
