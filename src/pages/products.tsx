@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       staticProducts: data.contents
     },
-    revalidate: 30
+    revalidate: 86400 * 3
   }
 }
 

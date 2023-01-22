@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (let i = 1; i <= pageCount; i++) {
     paths.push({ params: { id: String(i) } })
   }
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       id,
       isLastPage: data.totalCount <= id * maxNumPerPage
     },
-    revalidate: 30
+    revalidate: 86400 * 3
   }
 }
 
