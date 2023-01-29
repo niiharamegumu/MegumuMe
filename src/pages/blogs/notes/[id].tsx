@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { notes, isLastPage } = await fetchNotes(params?.id)
   return {
     props: { staticNotes: notes, isLastPage },
-    revalidate: 86400 * 3
+    revalidate: 60
   }
 }
 
@@ -67,10 +67,6 @@ const BlogsNotes: VFC<Props> = props => {
   const { staticNotes, isLastPage } = props
   const router = useRouter()
   const currentPagination = Number(router.asPath.split('/').pop())
-
-  if (router.isFallback) {
-    return <Spinner />
-  }
 
   return (
     <>
