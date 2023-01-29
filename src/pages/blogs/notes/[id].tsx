@@ -79,7 +79,7 @@ const BlogsNotes: VFC<Props> = props => {
       />
       <HeadH2 display="flex" alignItems="center" gap={2}>
         <FcReading />
-        blogs
+        blogs - notes
       </HeadH2>
       <BlogsNav />
       <Grid templateColumns={'1fr'} gap={2}>

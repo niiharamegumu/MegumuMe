@@ -5,6 +5,7 @@ export const routePath = {
   privacy: '/policy/privacy/',
   blogs: {
     index: '/blogs/1',
-    note: '/blogs/notes/1'
+    note: '/blogs/notes/1',
+    zenn: '/blogs/zenn'
   }
 }
