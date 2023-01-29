@@ -15,10 +15,10 @@ export const Layout: VFC<Props> = memo(props => {
   const { children } = props
   return (
     <>
-      <Container maxW="container.xl">
+      <Container maxW="5xl">
         <Header />
         <MainLayout rightComponents={<Nav />}>
-          <Box p={{ base: '40px 0 20px', lg: '40px 0' }}>{children}</Box>
+          <Box pb="20px">{children}</Box>
         </MainLayout>
         <Footer />
       </Container>

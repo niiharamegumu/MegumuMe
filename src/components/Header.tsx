@@ -12,7 +12,7 @@ const ChakraMotion = chakra(motion.div, {
 
 export const Header: VFC = () => {
   return (
-    <Box as="header" pt={8}>
+    <Box as="header" py={8}>
       <Link href={routePath.top} passHref>
         <Flex
           bgGradient="linear(to-br, #6139FD, #974FFE, #C260FE)"

@@ -21,7 +21,7 @@ const BlogsNav: VFC = () => {
   return (
     <Flex
       alignItems="center"
-      gap={{ base: 8, md: 4 }}
+      gap={4}
       py={6}
       fontSize={{ base: 'md', lg: 'xl' }}
     >
@@ -31,6 +31,13 @@ const BlogsNav: VFC = () => {
         {...(isActivePageRegex('^/blogs/[0-9]*$') ? activeStyles : styles)}
       >
         megumu.me
+      </Link>
+      <Link
+        href={routePath.blogs.zenn}
+        _hover={{ textDecoration: 'none' }}
+        {...(isActivePageRegex('^/blogs/zenn') ? activeStyles : styles)}
+      >
+        zenn.dev
       </Link>
       <Link
         href={routePath.blogs.note}
