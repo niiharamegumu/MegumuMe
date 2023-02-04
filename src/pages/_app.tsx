@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <>
       <Head>
         <meta name="theme-color" content="#171923" />
-        <link rel="manifest" href="./manifest.webmanifest" />
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico" />
         <link
           rel="apple-touch-icon"
