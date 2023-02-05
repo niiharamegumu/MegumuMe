@@ -1,7 +1,7 @@
-import { useEffect, VFC } from 'react'
+import { useEffect, useMemo, VFC } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { Box, Button, Link, Spinner } from '@chakra-ui/react'
+import { Button, Spinner } from '@chakra-ui/react'
 import useSWR from 'swr'
 import cheerio, { CheerioAPI } from 'cheerio'
 import hljs from 'highlight.js'
@@ -12,7 +12,6 @@ import { BlogDetail } from '../../components/blogs/BlogDetail'
 import { clientBlogs } from '../../libs/microCMS/client'
 import { BlogType } from '../../types/blog'
 import VisibilitySection from '../../components/VisibilitySection'
-import { routePath } from '../../utils/routePath'
 
 type Props = {
   staticBlog: BlogType
@@ -70,6 +69,10 @@ const Post: VFC<Props> = props => {
     fallbackData: staticBlog
   })
 
+  const ogImage = useMemo(() => {
+    return `${process.env.NEXT_PUBLIC_SITE_URL!}/api/og?title=${blog?.title}`
+  }, [blog?.title])
+
   useEffect(() => {
     mutate()
   }, [mutate])
@@ -88,7 +91,7 @@ const Post: VFC<Props> = props => {
       <Seo
         pageTitle={blog.title}
         pageDescription={blog.description}
-        pageImg={`${blog.mainImage.url}?fm=webp&w=200&q=40&dpr=5`}
+        pageImg={ogImage}
       />
 
       <BlogDetail blog={blog} />
