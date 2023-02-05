@@ -46,7 +46,7 @@ export default function handler(req: NextRequest) {
           >
             <div
               style={{
-                fontSize: 46,
+                fontSize: 54,
                 color: 'black',
                 lineHeight: 1.3,
                 width: '100%'
@@ -66,21 +66,21 @@ export default function handler(req: NextRequest) {
             >
               <div
                 style={{
-                  width: '30px',
-                  height: '30px',
+                  width: '40px',
+                  height: '40px',
                   borderRadius: '50%',
                   background:
                     'linear-gradient(135deg, #6139FD, #974FFE, #C260FE)'
                 }}
               ></div>
-              <p style={{ fontSize: 30 }}>megumu.me</p>
+              <p style={{ fontSize: 34, marginTop: 10 }}>megumu.me</p>
             </div>
           </div>
         </div>
       ),
       {
-        width: 1200,
-        height: 630
+        width: 1280,
+        height: 640
       }
     )
   } catch (e: any) {
