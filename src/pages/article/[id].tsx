@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.contents.map(content => {
     return { params: { id: content.id } }
   })
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       staticBlog: blog,
       id: params?.id
     },
-    revalidate: 60
+    revalidate: 60 * 3
   }
 }
 
