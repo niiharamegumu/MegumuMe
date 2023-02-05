@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       staticBlog: blog,
       id: params?.id
     },
-    revalidate: 86400 * 3
+    revalidate: 60
   }
 }
 
