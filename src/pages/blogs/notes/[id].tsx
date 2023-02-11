@@ -52,7 +52,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (let i = 1; i <= pageCount; i++) {
     paths.push({ params: { id: String(i) } })
   }
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
