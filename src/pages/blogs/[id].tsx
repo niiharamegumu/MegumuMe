@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       id,
       isLastPage: data.totalCount <= id * maxNumPerPage
     },
-    revalidate: 86400 * 3
+    revalidate: 60 * 3
   }
 }
 
