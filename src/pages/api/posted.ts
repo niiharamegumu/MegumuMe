@@ -14,6 +14,7 @@ export default async function handler(
     await res.revalidate(`/article/${articleId}`)
     return res.status(200)
   } catch (err) {
-    return res.status(500)
+    console.log(err)
+    return res.status(500).send(err)
   }
 }
