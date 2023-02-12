@@ -5,6 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log(req.body)
   try {
     if (!isCollectSignature(req.headers['x-microcms-signature'], req)) {
       return res.status(401).send('Invalid token')
