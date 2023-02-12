@@ -9,7 +9,7 @@ export const isCollectSignature = (
 
   const expectedSignature = crypto
     .createHmac('sha256', process.env.X_MICROCMS_POSTED_WEBHOOK_SECRET_KEY!)
-    .update(req.body)
+    .update(JSON.stringify(req.body))
     .digest('hex')
   if (
     !crypto.timingSafeEqual(
