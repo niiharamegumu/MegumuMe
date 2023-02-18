@@ -58,7 +58,7 @@ export const Nav: VFC = () => {
       </GridItem>
       <GridItem>
         <NavLink
-          path="https://twitter.com/lmgm_m"
+          path="https://twitter.com/megumu_me"
           isBlank={true}
           ariaLabel="To Twitter"
         >
